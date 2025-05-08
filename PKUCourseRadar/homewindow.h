@@ -1,7 +1,7 @@
 #ifndef HOMEWINDOW_H
 #define HOMEWINDOW_H
 
-#include <QDialog>
+#include "utils.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
