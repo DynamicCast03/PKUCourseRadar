@@ -10,13 +10,19 @@ CONFIG += c++17
 
 SOURCES += \
     aboutus.cpp \
+    course.cpp \
     coursemanager.cpp \
+    coursetime.cpp \
+    debug_utils.cpp \
     main.cpp \
     homewindow.cpp
 
 HEADERS += \
     aboutus.h \
+    course.h \
     coursemanager.h \
+    coursetime.h \
+    debug_utils.h \
     homewindow.h \
     stdc++.h \
     utils.h
