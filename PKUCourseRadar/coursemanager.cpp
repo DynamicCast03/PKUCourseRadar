@@ -17,6 +17,8 @@ bool CourseManager::readFromFile(QFile& file)
         if (!courseValue.isObject()) return false;
         QJsonObject courseObject = courseValue.toObject();
         QString name = courseObject["name"].toString();
+        QString building = courseObject["building"].toString();
+        QString room = courseObject["room"].toString();
         CourseTime courseTime;
         if (courseObject.contains("courseTime") && courseObject["courseTime"].isArray()) {
             QJsonArray jsonCourseTimeArray = courseObject["courseTime"].toArray();
@@ -47,6 +49,8 @@ bool CourseManager::readFromFile(QFile& file)
         } else return false;
         Course newCourse;
         newCourse.name = name;
+        newCourse.building = building;
+        newCourse.room = room;
         newCourse.ct = courseTime;
         newCourse.tags = tags;
         if(AllCourses.find(newCourse) != AllCourses.end()) return false;
@@ -62,6 +66,8 @@ bool CourseManager::writeToFile(QFile& file)
     for (const Course& course : AllCourses) {
         QJsonObject courseObject;
         courseObject["name"] = course.name;
+        courseObject["room"] = course.room;
+        courseObject["building"] = course.building;
         QJsonArray jsonCourseTimeArray;
         for (int i = 1; i <= 7; i++) {
             QJsonArray jsonSessionsArray;
@@ -113,6 +119,26 @@ QSet<Course> CourseManager::searchByTags(QSet<QString> t)
             }
         }
         if (flag) {
+            res.insert(c);
+        }
+    }
+    return res;
+}
+
+QSet<Course> CourseManager::searchByBuilding(QString building){
+    QSet<Course> res;
+    for (const Course& c : AllCourses) {
+        if (c.building.contains(building, Qt::CaseInsensitive)) {
+            res.insert(c);
+        }
+    }
+    return res;
+}
+
+QSet<Course> CourseManager::searchByBuildingAndRoom(QString building, QString room){
+    QSet<Course> res;
+    for (const Course& c : AllCourses) {
+        if (c.building.contains(building, Qt::CaseInsensitive) && c.room.contains(room, Qt::CaseInsensitive)) {
             res.insert(c);
         }
     }

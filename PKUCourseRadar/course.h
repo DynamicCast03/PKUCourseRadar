@@ -9,7 +9,7 @@ class Course
 public:
     Course();
     CourseTime ct;
-    QString name;
+    QString name, building, room;
     QSet<QString> tags;
 
 };

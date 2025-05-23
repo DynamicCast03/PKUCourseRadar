@@ -11,6 +11,9 @@ void displayCourses(const CourseManager& manager)
         for (const Course& course : manager.AllCourses) {
             qDebug() << "课程 #" << ++count;
             qDebug() << "  课程名称:" << course.name;
+            qDebug() << "  教学楼:" << course.building;
+            qDebug() << "  教室:" << course.room;
+
             qDebug() << "  课程时间:";
             // 直接访问 CourseTime 的 table 并解析二进制
             const QString weekDays[] = {"", "周一", "周二", "周三", "周四", "周五", "周六", "周日"};

@@ -13,6 +13,8 @@ public:
     bool writeToFile(QFile& file);
     QSet<Course> searchByName(QString name);
     QSet<Course> searchByTags(QSet<QString> tags);
+    QSet<Course> searchByBuilding(QString building);
+    QSet<Course> searchByBuildingAndRoom(QString building, QString room);
 };
 
 #endif // COURSEMANAGER_H
