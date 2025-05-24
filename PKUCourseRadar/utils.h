@@ -13,4 +13,10 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QMouseEvent>
+#include <QGridLayout>
+#include <QtGui>
+#include <QListWidgetItem>
 #endif // UTILS_H

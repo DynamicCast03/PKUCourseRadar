@@ -4,17 +4,18 @@
 #include "utils.h"
 #include "course.h"
 
-class CourseManager
+class CourseManager : public QObject
 {
+    Q_OBJECT
 public:
+    static CourseManager theManager;
     CourseManager();
     QSet<Course> AllCourses;
+    QSet<QString> AllTags;
     bool readFromFile(QFile& file);
     bool writeToFile(QFile& file);
-    QSet<Course> searchByName(QString name);
-    QSet<Course> searchByTags(QSet<QString> tags);
-    QSet<Course> searchByBuilding(QString building);
-    QSet<Course> searchByBuildingAndRoom(QString building, QString room);
+    void generateTags();
 };
+
 
 #endif // COURSEMANAGER_H

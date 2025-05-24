@@ -1,5 +1,8 @@
 #include "coursemanager.h"
 
+
+CourseManager CourseManager::theManager;
+
 CourseManager::CourseManager() {
     
 }
@@ -19,6 +22,8 @@ bool CourseManager::readFromFile(QFile& file)
         QString name = courseObject["name"].toString();
         QString building = courseObject["building"].toString();
         QString room = courseObject["room"].toString();
+        QString teacher = courseObject["teacher"].toString();
+        QString note = courseObject["note"].toString();
         CourseTime courseTime;
         if (courseObject.contains("courseTime") && courseObject["courseTime"].isArray()) {
             QJsonArray jsonCourseTimeArray = courseObject["courseTime"].toArray();
@@ -51,11 +56,14 @@ bool CourseManager::readFromFile(QFile& file)
         newCourse.name = name;
         newCourse.building = building;
         newCourse.room = room;
+        newCourse.teacher = teacher;
         newCourse.ct = courseTime;
         newCourse.tags = tags;
+        newCourse.note = note;
         if(AllCourses.find(newCourse) != AllCourses.end()) return false;
         AllCourses.insert(newCourse);
     }
+    generateTags();
     return true;
 }
 
@@ -68,13 +76,14 @@ bool CourseManager::writeToFile(QFile& file)
         courseObject["name"] = course.name;
         courseObject["room"] = course.room;
         courseObject["building"] = course.building;
+        courseObject["teacher"] = course.teacher;
+        courseObject["note"] = course.note;
         QJsonArray jsonCourseTimeArray;
-        for (int i = 1; i <= 7; i++) {
+        for (int i = 0; i < 7; i++) {
             QJsonArray jsonSessionsArray;
-            int dailySchedule = course.ct.table[i];
-            for (int j = 1; j <= 12; j++) {
-                if (dailySchedule & (1 << j)) {
-                    jsonSessionsArray.append(j);
+            for (int j = 0; j < 12; j++) {
+                if (course.ct.table[i][j]) {
+                    jsonSessionsArray.append(j + 1);
                 }
             }
             jsonCourseTimeArray.append(jsonSessionsArray);
@@ -97,50 +106,10 @@ bool CourseManager::writeToFile(QFile& file)
     return true;
 }
 
-QSet<Course> CourseManager::searchByName(QString name){
-    QSet<Course> res;
-    for (const Course& c : AllCourses) {
-        if (c.name.contains(name, Qt::CaseInsensitive)) {
-            res.insert(c);
+void CourseManager::generateTags() {
+    for (const Course& course : AllCourses) {
+        for (const QString& tag : course.tags) {
+            AllTags.insert(tag);
         }
     }
-    return res;
-}
-
-QSet<Course> CourseManager::searchByTags(QSet<QString> t)
-{
-    QSet<Course> res;
-    for (const Course& c : AllCourses) {
-        bool flag = true;
-        for (const QString& tag : t) {
-            if (!c.tags.contains(tag)) {
-                flag = false;
-                break;
-            }
-        }
-        if (flag) {
-            res.insert(c);
-        }
-    }
-    return res;
-}
-
-QSet<Course> CourseManager::searchByBuilding(QString building){
-    QSet<Course> res;
-    for (const Course& c : AllCourses) {
-        if (c.building.contains(building, Qt::CaseInsensitive)) {
-            res.insert(c);
-        }
-    }
-    return res;
-}
-
-QSet<Course> CourseManager::searchByBuildingAndRoom(QString building, QString room){
-    QSet<Course> res;
-    for (const Course& c : AllCourses) {
-        if (c.building.contains(building, Qt::CaseInsensitive) && c.room.contains(room, Qt::CaseInsensitive)) {
-            res.insert(c);
-        }
-    }
-    return res;
 }

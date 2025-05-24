@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/homewindow">
+        <file>pku.jpg</file>
+    </qresource>
+</RCC>

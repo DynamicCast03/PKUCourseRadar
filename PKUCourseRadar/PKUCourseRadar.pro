@@ -11,27 +11,42 @@ CONFIG += c++17
 SOURCES += \
     aboutus.cpp \
     course.cpp \
+    coursecell.cpp \
+    courseinfowindow.cpp \
     coursemanager.cpp \
+    coursetablewidget.cpp \
     coursetime.cpp \
     debug_utils.cpp \
     main.cpp \
-    homewindow.cpp
+    homewindow.cpp \
+    radarwindow.cpp
 
 HEADERS += \
     aboutus.h \
     course.h \
+    coursecell.h \
+    courseinfowindow.h \
     coursemanager.h \
+    coursetablewidget.h \
     coursetime.h \
     debug_utils.h \
     homewindow.h \
+    radarwindow.h \
     stdc++.h \
     utils.h
 
 FORMS += \
     aboutus.ui \
-    homewindow.ui
+    courseinfowindow.ui \
+    homewindow.ui \
+    radarwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+TRANSLATIONS +=
+
+RESOURCES += \
+    picture.qrc

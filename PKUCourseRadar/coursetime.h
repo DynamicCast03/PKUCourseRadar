@@ -3,13 +3,17 @@
 
 #include "utils.h"
 
-class CourseTime
+class CourseTime : public QObject
 {
+    Q_OBJECT
 public:
     CourseTime();
-    QVector<int> table;
+    CourseTime(const CourseTime& ct);
+    CourseTime& operator=(const CourseTime& ct);
+    QVector<QVector<int>> table;
     void add(int day, int session);
     bool conflict(const CourseTime& ct);
+    QString toString();
 };
 
 #endif // COURSETIME_H
