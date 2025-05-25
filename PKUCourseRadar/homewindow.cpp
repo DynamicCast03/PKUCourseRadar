@@ -34,6 +34,7 @@ void HomeWindow::readCourses(){
 void HomeWindow::on_btn_import_clicked()
 {
     QString filepath = QFileDialog::getOpenFileName(this, tr("选择包含课程信息的文件"), "", tr("JSON (*.json);;所有文件 (*)"));
+    if(filepath.isEmpty()) return;
     QFile file(filepath);
     bool success = CourseManager::theManager.readFromFile(file);
     if(success){

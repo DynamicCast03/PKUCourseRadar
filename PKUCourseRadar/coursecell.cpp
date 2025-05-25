@@ -12,6 +12,7 @@ CourseCell::CourseCell(QWidget *parent, const QString& displayText)
     this->textLabel->setText(displayText);
     this->textLabel->setAlignment(Qt::AlignCenter);
     this->textLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    textLabel -> setStyleSheet("color: black;");
     setLayout(layout);
     connect(colorAnimation, &QVariantAnimation::valueChanged, this, &CourseCell::onAnimationValueChanged);
     colorAnimation->setDuration(500);
