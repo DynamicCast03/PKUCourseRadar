@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     aboutus.cpp \
+    betterbutton.cpp \
     course.cpp \
     coursecell.cpp \
     courseinfowindow.cpp \
@@ -19,10 +20,12 @@ SOURCES += \
     debug_utils.cpp \
     main.cpp \
     homewindow.cpp \
-    radarwindow.cpp
+    radarwindow.cpp \
+    utils.cpp
 
 HEADERS += \
     aboutus.h \
+    betterbutton.h \
     course.h \
     coursecell.h \
     courseinfowindow.h \
@@ -30,10 +33,12 @@ HEADERS += \
     coursetablewidget.h \
     coursetime.h \
     debug_utils.h \
+    en_US.h \
     homewindow.h \
     radarwindow.h \
     stdc++.h \
-    utils.h
+    utils.h \
+    zh_CN.h
 
 FORMS += \
     aboutus.ui \
@@ -46,7 +51,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-TRANSLATIONS +=
+TRANSLATIONS += \
+    PKUCourseRadar_en_US.ts \
+    PKUCourseRadar_zh_CN.ts
 
 RESOURCES += \
     picture.qrc

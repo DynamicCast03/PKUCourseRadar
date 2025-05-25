@@ -1,5 +1,6 @@
 #include "aboutus.h"
 #include "ui_aboutus.h"
+#include "utils.h"
 
 AboutUs::AboutUs(QWidget *parent)
     : QDialog(parent)

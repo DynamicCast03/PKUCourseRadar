@@ -1,6 +1,8 @@
 #include "homewindow.h"
 #include "ui_homewindow.h"
 #include "aboutus.h"
+#include "en_US.h"
+#include "zh_CN.h"
 
 HomeWindow::HomeWindow(QWidget *parent)
     : QDialog(parent)
@@ -53,5 +55,25 @@ void HomeWindow::on_btn_about_clicked()
 {
     AboutUs* about = new AboutUs();
     about->exec();
+}
+
+
+void HomeWindow::on_radio_english_clicked()
+{
+    QTranslator* translator = new QTranslator();
+    if (translator->load(en_US_qm, en_US_qm_len)) {
+        QCoreApplication::installTranslator(translator);
+    }
+    ui->retranslateUi(this);
+}
+
+
+void HomeWindow::on_radio_chinese_clicked()
+{
+    QTranslator* translator = new QTranslator();
+    if (translator->load(zh_CN_qm, zh_CN_qm_len)) {
+        QCoreApplication::installTranslator(translator);
+    }
+    ui->retranslateUi(this);
 }
 

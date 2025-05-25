@@ -27,6 +27,10 @@ private slots:
     void on_btn_start_clicked();
     void on_btn_about_clicked();
 
+    void on_radio_english_clicked();
+
+    void on_radio_chinese_clicked();
+
 private:
     Ui::HomeWindow *ui;
 };
