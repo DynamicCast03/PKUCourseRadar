@@ -12,8 +12,10 @@ public:
     QVector<QVector<CourseCell*>> cells; // 两个下标都从1开始, 0行0列是表头
 signals:
     void cellClicked(int x, int y);
+    void cellRightClicked(int x, int y, bool disabled);
 private slots:
     void handleCellClicked();
+    void handleCellRightClicked(bool disabled);
 private:
     QGridLayout *layout;
 };

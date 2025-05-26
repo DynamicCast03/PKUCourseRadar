@@ -7,9 +7,11 @@ RadarWindow::RadarWindow(QWidget *parent)
 {
     ui->setupUi(this);
     nowTable = QVector<QVector<QSet<Course>>>(7, QVector<QSet<Course>>(12));
+    nowDisabled = QVector<QVector<int>>(7, QVector<int>(12, 0));
     nowReadyTags = CourseManager::theManager.AllTags;
     nowSelectedTags = QSet<QString>();
     connect(ui -> Table, &CourseTableWidget::cellClicked, this, &RadarWindow::cellClicked);
+    connect(ui -> Table, &CourseTableWidget::cellRightClicked, this, &RadarWindow::cellRightClicked);
     showTags();
     reSearchCourses();
 }
@@ -60,6 +62,7 @@ void RadarWindow::reSearchCourses()
         && (nowBuilding.isEmpty() || course.building.contains(nowBuilding, Qt::CaseInsensitive))
         && (nowRoom.isEmpty() || course.room.contains(nowRoom, Qt::CaseInsensitive))
         && (nowSelectedTags.isEmpty() || course.tags.contains(nowSelectedTags))
+        && isFree(course)
         ){
             nowCourses.insert(course);
             for(int i = 0; i < 7; ++i){
@@ -75,7 +78,8 @@ void RadarWindow::reSearchCourses()
     }
     for(int i = 0; i < 7; ++i){
         for(int j = 0; j < 12; ++j){
-            ui -> Table -> cells[i][j] -> setDisplayText(QString::number(nowTable[i][j].size()));
+            ui -> Table -> cells[i][j] -> num = nowTable[i][j].size();
+            ui -> Table -> cells[i][j] -> update();
         }
     }
 }
@@ -124,4 +128,20 @@ void RadarWindow::cellClicked(int x, int y)
     if(nowTable[x - 1][y - 1].isEmpty()) return;
     CourseInfoWindow *window = new CourseInfoWindow(this, this, x, y);
     window -> show();
+}
+
+void RadarWindow::cellRightClicked(int x, int y, bool disabled)
+{
+    nowDisabled[x - 1][y - 1] = disabled;
+    reSearchCourses();
+}
+
+bool RadarWindow::isFree(const Course& course)
+{
+    for(int i = 0; i < 7; ++i){
+        for(int j = 0; j < 12; ++j){
+            if(course.ct.table[i][j] && nowDisabled[i][j]) return false;
+        }
+    }
+    return true;
 }

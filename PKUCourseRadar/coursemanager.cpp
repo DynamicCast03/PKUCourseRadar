@@ -9,7 +9,7 @@ CourseManager::CourseManager() {
 
 bool CourseManager::readFromFile(QFile& file)
 {
-    AllCourses.clear();
+    QSet<Course> newCourses;
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     QByteArray fileContent = file.readAll();
     file.close();
@@ -60,9 +60,10 @@ bool CourseManager::readFromFile(QFile& file)
         newCourse.ct = courseTime;
         newCourse.tags = tags;
         newCourse.note = note;
-        if(AllCourses.find(newCourse) != AllCourses.end()) return false;
-        AllCourses.insert(newCourse);
+        if(newCourses.find(newCourse) != newCourses.end()) return false;
+        newCourses.insert(newCourse);
     }
+    AllCourses = newCourses;
     generateTags();
     return true;
 }
@@ -107,6 +108,7 @@ bool CourseManager::writeToFile(QFile& file)
 }
 
 void CourseManager::generateTags() {
+    AllTags.clear();
     for (const Course& course : AllCourses) {
         for (const QString& tag : course.tags) {
             AllTags.insert(tag);

@@ -9,9 +9,13 @@ class CourseCell : public QWidget
 public:
     explicit CourseCell(QWidget *parent = nullptr, const QString& displayText = "");
     void setDisplayText(const QString& str);
-    int x, y;
+    int x, y, num;
+    bool disabled;
+    bool isConstText;
+    QString constText;
 signals:
     void clicked();
+    void rightClicked(bool disabled);
 
 protected:
     void enterEvent(QEnterEvent *e) override;
@@ -25,6 +29,7 @@ private:
     QColor baseColor;
     QColor hoverColor;
     QColor pressedColor;
+    QColor disabledColor;
     QColor currentColor;
     QVariantAnimation* colorAnimation;
 private slots:

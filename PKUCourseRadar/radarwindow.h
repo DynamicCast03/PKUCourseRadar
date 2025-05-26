@@ -19,8 +19,9 @@ public:
     ~RadarWindow();
     void reSearchCourses();
     void showTags();
+    bool isFree(const Course& course);
     QVector<QVector<QSet<Course>>> nowTable;
-
+    QVector<QVector<int>> nowDisabled;
 private slots:
     void on_i_name_textChanged(const QString &str);
     void on_i_teacher_textChanged(const QString &str);
@@ -30,7 +31,7 @@ private slots:
     void on_l_all_tags_itemDoubleClicked(QListWidgetItem *item);
     void on_l_selected_tags_itemDoubleClicked(QListWidgetItem *item);
     void cellClicked(int x, int y);
-
+    void cellRightClicked(int x, int y, bool disabled);
 private:
     Ui::RadarWindow *ui;
     QString nowName;
