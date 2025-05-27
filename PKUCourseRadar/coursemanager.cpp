@@ -60,7 +60,8 @@ bool CourseManager::readFromFile(QFile& file)
         newCourse.ct = courseTime;
         newCourse.tags = tags;
         newCourse.note = note;
-        if(newCourses.find(newCourse) != newCourses.end()) return false;
+        qDebug() << name << "\n";
+        // if(newCourses.find(newCourse) != newCourses.end()) return false;
         newCourses.insert(newCourse);
     }
     AllCourses = newCourses;

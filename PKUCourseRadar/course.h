@@ -18,17 +18,32 @@ public:
     QString note;
     QString description();
     QString tagsString();
+    bool operator==(const Course& other) const;
 };
 
-inline bool operator==(const Course& lhs, const Course& rhs)
+
+inline bool Course::operator==(const Course& other) const
 {
-    return lhs.name == rhs.name;
+    return (ct == other.ct) &&
+           (name == other.name) &&
+           (building == other.building) &&
+           (room == other.room) &&
+           (teacher == other.teacher) &&
+           (tags == other.tags);
 }
 
-inline uint qHash(const Course& course, uint seed = 0)
+inline uint qHash(const Course& key, uint seed = 0)
 {
-    return qHash(course.name, seed);
+    uint hash = seed;
+    hash = qHash(key.ct, hash);
+    hash = qHash(key.name, hash);
+    hash = qHash(key.building, hash);
+    hash = qHash(key.room, hash);
+    hash = qHash(key.teacher, hash);
+    for (const QString& tag : key.tags) {
+        hash = qHash(tag, hash);
+    }
+    return hash;
 }
-
 
 #endif // COURSE_H
