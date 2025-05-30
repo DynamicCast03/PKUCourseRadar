@@ -86,9 +86,9 @@ void CourseCell::mouseReleaseEvent(QMouseEvent* e){
 
 void CourseCell::paintEvent(QPaintEvent* e){
     QPainter painter(this);
-    painter.fillRect(0, 0, width() - 1, height() - 1, currentColor);
+    painter.fillRect(1, 1, width() - 2, height() - 2, currentColor);
     painter.setPen(QPen(QColor(100, 100, 100), 1));
-    painter.drawRect(0, 0, width() - 1, height() - 1);
+    painter.drawRect(1, 1, width() - 2, height() - 2);
     if(isConstText){
         setDisplayText(constText);
     } else if(!disabled){
