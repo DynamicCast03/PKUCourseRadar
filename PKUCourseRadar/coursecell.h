@@ -21,6 +21,7 @@ public:
     QString constText;
     friend MyLesson;
     friend CourseInfoWindow;
+    void refresh();
 signals:
     void clicked();
     void rightClicked(bool disabled);

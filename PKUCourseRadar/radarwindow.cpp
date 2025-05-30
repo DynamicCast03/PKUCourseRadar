@@ -127,7 +127,7 @@ void RadarWindow::cellClicked(int x, int y)
     qDebug() << x << " " << y;
     if(nowTable[x - 1][y - 1].isEmpty()) return;
     CourseInfoWindow *window = new CourseInfoWindow(this, this, x, y);
-    window -> exec();
+    window -> show();
 }
 
 void RadarWindow::cellRightClicked(int x, int y, bool disabled)

@@ -12,6 +12,7 @@ public:
     bool frommy=0;
     explicit CourseTableWidget(QWidget *parent /*= nullptr*/);
     QVector<QVector<CourseCell*>> cells; // 两个下标都从1开始, 0行0列是表头
+    void refreshAllCells();
 signals:
     void cellClicked(int x, int y);
     void cellRightClicked(int x, int y, bool disabled);

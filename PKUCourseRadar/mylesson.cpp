@@ -40,7 +40,7 @@ MyLesson::MyLesson(QWidget *parent)
 
 void MyLesson::cellclicked(int x,int y){
     CourseInfoWindow* window=new CourseInfoWindow(this,this,x,y);
-    window->exec();
+    window->show();
 }
 
 MyLesson::~MyLesson()

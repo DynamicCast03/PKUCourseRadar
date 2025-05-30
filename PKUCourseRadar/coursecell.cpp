@@ -47,6 +47,7 @@ void CourseCell::setDisplayText(const QString& str, bool hasCourse) {
     // }
 }
 void CourseCell::mousePressEvent(QMouseEvent* e){
+    qDebug() << "mouse pressed!!!111";
     if(!disabled && e->button() == Qt::LeftButton){
         emit clicked();
         colorAnimation->setDuration(100);
@@ -128,3 +129,11 @@ void CourseCell::leaveEvent(QEvent* e){
     QWidget::leaveEvent(e);
 }
 
+void CourseCell::refresh(){
+    if(!disabled){
+        colorAnimation->setDuration(200);
+        colorAnimation->setStartValue(currentColor);
+        colorAnimation->setEndValue(baseColor);
+        colorAnimation->start();
+    }
+}

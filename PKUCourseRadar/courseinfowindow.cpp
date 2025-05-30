@@ -57,6 +57,7 @@ CourseInfoWindow::~CourseInfoWindow()
 void CourseInfoWindow::moveItemToTop(const QString& coursename)
 {
     my->ui->MyTable->cells[x - 1][y - 1]->FirstLesson = coursename;
+    my->ui->MyTable->cells[x - 1][y - 1]->update();
 }
 
 void CourseInfoWindow::on_l_list_currentItemChanged(QListWidgetItem* current, QListWidgetItem* previous)
