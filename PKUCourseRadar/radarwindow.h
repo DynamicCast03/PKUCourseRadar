@@ -5,6 +5,7 @@
 #include "course.h"
 #include "coursemanager.h"
 #include "courseinfowindow.h"
+#include "mylesson.h"
 
 namespace Ui {
 class RadarWindow;
@@ -40,7 +41,7 @@ private:
     QString nowRoom;
     QSet<QString> nowReadyTags, nowSelectedTags;
     QSet<Course> nowCourses;
-
+    MyLesson my_like_lesson;
     QString nowSearchingTags;
 };
 

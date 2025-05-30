@@ -20,6 +20,8 @@ SOURCES += \
     debug_utils.cpp \
     main.cpp \
     homewindow.cpp \
+    mylesson.cpp \
+    mylike.cpp \
     radarwindow.cpp \
     utils.cpp
 
@@ -35,6 +37,8 @@ HEADERS += \
     debug_utils.h \
     en_US.h \
     homewindow.h \
+    mylesson.h \
+    mylike.h \
     radarwindow.h \
     stdc++.h \
     utils.h \
@@ -44,6 +48,7 @@ FORMS += \
     aboutus.ui \
     courseinfowindow.ui \
     homewindow.ui \
+    mylesson.ui \
     radarwindow.ui
 
 # Default rules for deployment.

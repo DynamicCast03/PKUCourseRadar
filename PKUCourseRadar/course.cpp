@@ -11,6 +11,7 @@ Course::Course(const Course& c){
     teacher = c.teacher;
     tags = c.tags;
     note = c.note;
+    liked=c.liked;
 }
 
 
@@ -22,6 +23,7 @@ Course& Course::operator=(const Course& c){
     teacher = c.teacher;
     tags = c.tags;
     note = c.note;
+    liked=c.liked;
     return *this;
 }
 

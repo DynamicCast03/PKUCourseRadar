@@ -10,12 +10,13 @@ CourseCell::CourseCell(QWidget *parent, const QString& displayText)
       colorAnimation(new QVariantAnimation(this))
 {
     layout->addWidget(textLabel);
-    if(!displayText.isEmpty()){
+    /*if(!displayText.isEmpty()&&!nonono){
         constText = displayText;
         isConstText = true;
     } else {
         isConstText = false;
-    }
+    }*/
+    constText=displayText;
     this->textLabel->setAlignment(Qt::AlignCenter);
     this->textLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     textLabel -> setStyleSheet("color: black;");
@@ -24,10 +25,31 @@ CourseCell::CourseCell(QWidget *parent, const QString& displayText)
     colorAnimation->setDuration(500);
 }
 
-void CourseCell::setDisplayText(const QString& str){
-    this->textLabel->setText(str);
-}
+void CourseCell::setDisplayText(const QString& str, bool hasCourse) {
+    //this->textLabel->setText(str);
 
+    QString displayText=str;
+    if(str.length() > 10) { // 如果超过10个字符就换行
+        int midPoint = str.length() / 2;
+        // 找到合适的换行位置（避免把词切断）
+        while(midPoint > 0 && str[midPoint] != ' ' && str[midPoint] != '-') {
+            midPoint--;
+        }
+        if(midPoint == 0) midPoint = str.length() / 2; // 如果找不到合适位置就强制切分
+
+        displayText = str.left(midPoint) + "\n" + str.mid(midPoint);
+    }
+
+    this->textLabel->setText(displayText);
+    this->textLabel->setWordWrap(true); // 启用自动换行
+
+    if (hasCourse) {
+        this->textLabel->setStyleSheet("color: rgb(25, 118, 210);");  // 蓝色
+    } else {
+        this->textLabel->setStyleSheet("color: rgb(0, 0, 0);");       // 黑色
+    }
+    update();
+}
 void CourseCell::mousePressEvent(QMouseEvent* e){
     if(!disabled && e->button() == Qt::LeftButton){
         emit clicked();
@@ -73,9 +95,14 @@ void CourseCell::paintEvent(QPaintEvent* e){
     if(isConstText){
         setDisplayText(constText);
     } else if(!disabled){
-        setDisplayText(QString::number(num));
-    } else{
+        if(FirstLesson.isEmpty())setDisplayText(QString::number(num));
+        else{
+            setDisplayText(FirstLesson,true);
+        }
+    } else if(!dontwanted){
         setDisplayText(tr("没空:("));
+    } else{
+        setDisplayText(tr("没课^_^"));
     }
     QWidget::paintEvent(e);
 }

@@ -2,17 +2,25 @@
 #define COURSECELL_H
 
 #include "utils.h"
+#include "mylesson.h"
+
 
 class CourseCell : public QWidget
 {
     Q_OBJECT
 public:
     explicit CourseCell(QWidget *parent = nullptr, const QString& displayText = "");
-    void setDisplayText(const QString& str);
-    int x, y, num;
+    void setDisplayText(const QString& str,bool hasCourse=false);
+    int x, y, num = 0;
     bool disabled;
-    bool isConstText;
+    bool nonono=false;
+    bool dontwanted=0;
+    bool FromMy=0;
+    bool isConstText=0;
+    QString FirstLesson="";
     QString constText;
+    friend MyLesson;
+    friend CourseInfoWindow;
 signals:
     void clicked();
     void rightClicked(bool disabled);

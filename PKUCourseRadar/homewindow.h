@@ -5,6 +5,7 @@
 #include "coursemanager.h"
 #include "debug_utils.h"
 #include "radarwindow.h"
+#include "mylesson.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,6 +23,7 @@ public:
     ~HomeWindow();
     QString config_path;
     RadarWindow *radar_window;
+    MyLesson* my_like=new MyLesson;
 private slots:
     void on_btn_import_clicked();
     void on_btn_start_clicked();
@@ -30,6 +32,8 @@ private slots:
     void on_radio_english_clicked();
 
     void on_radio_chinese_clicked();
+
+    void on_btn_mylesson_clicked();
 
 private:
     Ui::HomeWindow *ui;

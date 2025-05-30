@@ -11,13 +11,13 @@ public:
     Course();
     Course(const Course& c);
     Course& operator=(const Course& c);
-
     CourseTime ct;
     QString name, building, room, teacher;
     QSet<QString> tags;
     QString note;
     QString description();
     QString tagsString();
+    bool liked=false;
     bool operator==(const Course& other) const;
 };
 
