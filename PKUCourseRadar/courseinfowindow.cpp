@@ -115,8 +115,10 @@ void CourseInfoWindow::on_l_list_itemDoubleClicked(QListWidgetItem* item)
                     if (!my->lesson_table[i][j].size()) {
                         my->ui->MyTable->cells[i][j]->disabled = 1;
                         my->ui->MyTable->cells[i][j]->dontwanted = 1;
+                        my->ui->MyTable->cells[i][j]->update();
                     } else {
                         my->ui->MyTable->cells[i][j]->FirstLesson = my->lesson_table[i][j].begin()->name;
+                        my->ui->MyTable->cells[i][j]->update();
                     }
                 }
             }
