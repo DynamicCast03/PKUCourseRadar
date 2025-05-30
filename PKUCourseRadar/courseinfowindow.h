@@ -26,7 +26,6 @@ public:
 
 private slots:
     void on_l_list_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
-
     void on_l_list_itemDoubleClicked(QListWidgetItem *item);
 
     //void on_l_list_itemClicked(QListWidgetItem *item);
