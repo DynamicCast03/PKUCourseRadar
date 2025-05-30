@@ -38,13 +38,13 @@ void CourseCell::setDisplayText(const QString& str, bool hasCourse) {
     }
 
     this->textLabel->setText(displayText);
-    this->textLabel->setWordWrap(true);
+    // this->textLabel->setWordWrap(true);
 
-    if (hasCourse) {
-        this->textLabel->setStyleSheet("color: rgb(25, 118, 210);");
-    } else {
-        this->textLabel->setStyleSheet("color: rgb(0, 0, 0);");
-    }
+    // if (hasCourse) {
+    //     this->textLabel->setStyleSheet("color: rgb(25, 118, 210);");
+    // } else {
+    //     this->textLabel->setStyleSheet("color: rgb(0, 0, 0);");
+    // }
 }
 void CourseCell::mousePressEvent(QMouseEvent* e){
     if(!disabled && e->button() == Qt::LeftButton){
