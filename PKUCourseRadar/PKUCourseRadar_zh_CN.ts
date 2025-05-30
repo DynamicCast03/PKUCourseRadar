@@ -27,7 +27,7 @@
 <context>
     <name>Course</name>
     <message>
-        <location filename="course.cpp" line="30"/>
+        <location filename="course.cpp" line="32"/>
         <source>课程名称：%1
 上课时间：
 %2上课地点：%3
@@ -40,6 +40,19 @@
 授课教师：%4
 课程标签：%5
 课程备注：%6</translation>
+    </message>
+</context>
+<context>
+    <name>CourseCell</name>
+    <message>
+        <location filename="coursecell.cpp" line="99"/>
+        <source>没空:(</source>
+        <translation>没空:(</translation>
+    </message>
+    <message>
+        <location filename="coursecell.cpp" line="101"/>
+        <source>--</source>
+        <translation>--</translation>
     </message>
 </context>
 <context>
@@ -87,6 +100,11 @@
         <location filename="coursetablewidget.cpp" line="8"/>
         <source>日</source>
         <translation>日</translation>
+    </message>
+    <message>
+        <location filename="coursetablewidget.cpp" line="8"/>
+        <source>\</source>
+        <translation>\</translation>
     </message>
 </context>
 <context>
@@ -143,7 +161,7 @@
     <name>HomeWindow</name>
     <message>
         <location filename="homewindow.ui" line="20"/>
-        <location filename="homewindow.ui" line="130"/>
+        <location filename="homewindow.ui" line="142"/>
         <source>开始</source>
         <translation>开始</translation>
     </message>
@@ -158,49 +176,62 @@
         <translation>简体中文</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="47"/>
+        <location filename="homewindow.ui" line="50"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="156"/>
+        <location filename="homewindow.ui" line="177"/>
+        <source>我的课程</source>
+        <translation>我的课程</translation>
+    </message>
+    <message>
+        <location filename="homewindow.ui" line="212"/>
         <source>导入课程信息</source>
         <translation>导入课程信息</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="182"/>
+        <location filename="homewindow.ui" line="247"/>
         <source>关于我们</source>
         <translation>关于我们</translation>
     </message>
     <message>
-        <location filename="homewindow.cpp" line="34"/>
+        <location filename="homewindow.cpp" line="37"/>
         <source>选择包含课程信息的文件</source>
         <translation>选择包含课程信息的文件</translation>
     </message>
     <message>
-        <location filename="homewindow.cpp" line="34"/>
+        <location filename="homewindow.cpp" line="37"/>
         <source>JSON (*.json);;所有文件 (*)</source>
         <translation>JSON (*.json);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="homewindow.cpp" line="38"/>
+        <location filename="homewindow.cpp" line="42"/>
         <source>导入成功</source>
         <translation>导入成功</translation>
     </message>
     <message>
-        <location filename="homewindow.cpp" line="38"/>
+        <location filename="homewindow.cpp" line="42"/>
         <source>已导入课程信息！</source>
         <translation>已导入课程信息！</translation>
     </message>
     <message>
-        <location filename="homewindow.cpp" line="40"/>
+        <location filename="homewindow.cpp" line="44"/>
         <source>导入失败</source>
         <translation>导入失败</translation>
     </message>
     <message>
-        <location filename="homewindow.cpp" line="40"/>
+        <location filename="homewindow.cpp" line="44"/>
         <source>导入失败，请检查Json格式是否符合要求，以及是否存在重复的课程名称。</source>
         <translation>导入失败，请检查Json格式是否符合要求，以及是否存在重复的课程名称。</translation>
+    </message>
+</context>
+<context>
+    <name>MyLesson</name>
+    <message>
+        <location filename="mylesson.ui" line="14"/>
+        <source>我的课程</source>
+        <translation>我的课程</translation>
     </message>
 </context>
 <context>
