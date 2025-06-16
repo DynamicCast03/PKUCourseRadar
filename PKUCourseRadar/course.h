@@ -1,48 +1,36 @@
 #ifndef COURSE_H
 #define COURSE_H
 
-#include "utils.h"
 #include "coursetime.h"
+#include "utils.h"
 
-class Course : public QObject
-{
+class Course : public QObject {
     Q_OBJECT
 public:
     Course();
     Course(const Course& c);
     Course& operator=(const Course& c);
     CourseTime ct;
+    QUuid id;
     QString name, building, room, teacher;
     QSet<QString> tags;
     QString note;
     QString description();
     QString tagsString();
-    bool liked=false;
+    bool include(int day, int session) const;
+    bool marked = false;
     bool operator==(const Course& other) const;
 };
 
-
 inline bool Course::operator==(const Course& other) const
 {
-    return (ct == other.ct) &&
-           (name == other.name) &&
-           (building == other.building) &&
-           (room == other.room) &&
-           (teacher == other.teacher) &&
-           (tags == other.tags);
+    return id == other.id;
 }
 
 inline uint qHash(const Course& key, uint seed = 0)
 {
     uint hash = seed;
-    hash = qHash(key.ct, hash);
-    hash = qHash(key.name, hash);
-    hash = qHash(key.building, hash);
-    hash = qHash(key.room, hash);
-    hash = qHash(key.teacher, hash);
-    for (const QString& tag : key.tags) {
-        hash = qHash(tag, hash);
-    }
+    hash = qHash(key.id, hash);
     return hash;
 }
 

@@ -19,6 +19,8 @@
 #include <QGridLayout>
 #include <QtGui>
 #include <QListWidgetItem>
+#include <QUuid>
+#include <QFontMetrics>
 
 class Utils{
 public:

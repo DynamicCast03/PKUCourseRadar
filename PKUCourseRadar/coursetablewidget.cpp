@@ -8,13 +8,11 @@ CourseTableWidget::CourseTableWidget(QWidget *parent)
     QStringList headerLabels = {tr("\\"), tr("一"), tr("二"), tr("三"), tr("四"), tr("五"), tr("六"), tr("日")};
     for (int i = 0; i < headerLabels.size(); i++) {
         CourseCell *cell = new CourseCell(this, headerLabels[i]);
-        cell->isConstText=true;
         layout->addWidget(cell, 0, i);
     }
 
     for(int i = 1; i <= 12; i++){
         CourseCell *cell = new CourseCell(this, QString::number(i));
-        cell->isConstText=true;
         layout->addWidget(cell, i, 0);
     }
     layout->setColumnStretch(0, 1);
@@ -57,4 +55,8 @@ void CourseTableWidget::refreshAllCells(){
             cells[i][j] -> refresh();
         }
     }
+}
+
+CourseCell* CourseTableWidget::getCell(int day, int session){
+    return cells[day - 1][session - 1];
 }

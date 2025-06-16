@@ -5,13 +5,13 @@
 #include "course.h"
 #include "utils.h"
 
-class MyLike : public QObject
+class MarkedCourseManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit MyLike(QObject *parent = nullptr);
-    static MyLike the_liked;
-    QVector<Course> All_Liked;
+    explicit MarkedCourseManager(QObject *parent = nullptr);
+    static MarkedCourseManager theMarkedManager;
+    QVector<Course> all_marked_courses;
 
 signals:
 };

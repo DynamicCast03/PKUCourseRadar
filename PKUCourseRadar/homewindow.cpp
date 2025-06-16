@@ -1,7 +1,7 @@
 #include "homewindow.h"
 #include "ui_homewindow.h"
 #include "aboutus.h"
-#include "mylesson.h"
+#include "mycourseswindow.h"
 #include "en_US.h"
 #include "zh_CN.h"
 
@@ -82,7 +82,7 @@ void HomeWindow::on_radio_chinese_clicked()
 
 void HomeWindow::on_btn_mylesson_clicked()
 {
-    my_like=new MyLesson(this);
+    my_like=new MyCoursesWindow(this);
     my_like->exec();
 }
 

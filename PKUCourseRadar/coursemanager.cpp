@@ -4,12 +4,12 @@
 CourseManager CourseManager::theManager;
 
 CourseManager::CourseManager() {
-    
+    selectedCourses = QVector<QVector<QUuid>>(7, QVector<QUuid>(12, QUuid()));
 }
 
 bool CourseManager::readFromFile(QFile& file)
 {
-    QSet<Course> newCourses;
+    AllCourses.clear();
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     QByteArray fileContent = file.readAll();
     file.close();
@@ -60,11 +60,11 @@ bool CourseManager::readFromFile(QFile& file)
         newCourse.ct = courseTime;
         newCourse.tags = tags;
         newCourse.note = note;
+        newCourse.id = QUuid::createUuid();
         qDebug() << name << "\n";
         // if(newCourses.find(newCourse) != newCourses.end()) return false;
-        newCourses.insert(newCourse);
+        AllCourses.insert(newCourse.id, newCourse);
     }
-    AllCourses = newCourses;
     generateTags();
     return true;
 }
@@ -73,7 +73,7 @@ bool CourseManager::writeToFile(QFile& file)
 {
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) return false;
     QJsonArray jsonCoursesArray;
-    for (const Course& course : AllCourses) {
+    for (const Course& course : AllCourses.values()) {
         QJsonObject courseObject;
         courseObject["name"] = course.name;
         courseObject["room"] = course.room;
@@ -110,9 +110,13 @@ bool CourseManager::writeToFile(QFile& file)
 
 void CourseManager::generateTags() {
     AllTags.clear();
-    for (const Course& course : AllCourses) {
+    for (const Course& course : AllCourses.values()) {
         for (const QString& tag : course.tags) {
             AllTags.insert(tag);
         }
     }
+}
+
+QUuid& CourseManager::getSelectedCourse(int day, int session) {
+    return selectedCourses[day - 1][session - 1];
 }

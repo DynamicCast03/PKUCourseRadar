@@ -1,7 +1,7 @@
 #include "mylike.h"
 
-MyLike MyLike::the_liked;
+MarkedCourseManager MarkedCourseManager::theMarkedManager;
 
-MyLike::MyLike(QObject *parent)
+MarkedCourseManager::MarkedCourseManager(QObject *parent)
     : QObject{parent}
 {}

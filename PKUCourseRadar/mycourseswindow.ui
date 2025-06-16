@@ -13,16 +13,11 @@
   <property name="windowTitle">
    <string>我的课程</string>
   </property>
-  <widget class="CourseTableWidget" name="MyTable" native="true">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>20</y>
-     <width>851</width>
-     <height>541</height>
-    </rect>
-   </property>
-  </widget>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="CourseTableWidget" name="Table" native="true"/>
+   </item>
+  </layout>
  </widget>
  <customwidgets>
   <customwidget>

@@ -1,7 +1,7 @@
 #include "homewindow.h"
 #include "coursemanager.h"
 #include "debug_utils.h"
-#include "mylesson.h"
+#include "mycourseswindow.h"
 int main(int argc, char *argv[])
 {
     QIcon::setThemeName("breeze");

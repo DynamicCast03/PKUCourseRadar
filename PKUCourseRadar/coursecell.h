@@ -2,7 +2,7 @@
 #define COURSECELL_H
 
 #include "utils.h"
-#include "mylesson.h"
+#include "mycourseswindow.h"
 
 
 class CourseCell : public QWidget
@@ -10,28 +10,20 @@ class CourseCell : public QWidget
     Q_OBJECT
 public:
     explicit CourseCell(QWidget *parent = nullptr, const QString& displayText = "");
-    void setDisplayText(const QString& str,bool hasCourse=false);
+    void setDisplayText(const QString& str);
     int x, y, num = 0;
-    bool disabled;
-    bool nonono=false;
-    bool dontwanted=0;
-    bool FromMy=0;
-    bool isConstText=0;
-    QString FirstLesson="";
-    QString constText;
-    friend MyLesson;
-    friend CourseInfoWindow;
+    bool disabled, canDisable;
     void refresh();
 signals:
     void clicked();
     void rightClicked(bool disabled);
-
 protected:
     void enterEvent(QEnterEvent *e) override;
     void leaveEvent(QEvent *e) override;
     void mousePressEvent(QMouseEvent *e) override;
     void mouseReleaseEvent(QMouseEvent *e) override;
     void paintEvent(QPaintEvent *e) override;
+    void resizeEvent(QResizeEvent* e) override;
 private:
     QLabel* textLabel;
     QVBoxLayout* layout;
@@ -41,6 +33,7 @@ private:
     QColor disabledColor;
     QColor currentColor;
     QVariantAnimation* colorAnimation;
+    QString nowOriginalText;
 private slots:
     void onAnimationValueChanged(const QVariant& value);
 };

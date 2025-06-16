@@ -10,51 +10,35 @@ CourseCell::CourseCell(QWidget *parent, const QString& displayText)
       colorAnimation(new QVariantAnimation(this))
 {
     layout->addWidget(textLabel);
-    /*if(!displayText.isEmpty()&&!nonono){
-        constText = displayText;
-        isConstText = true;
-    } else {
-        isConstText = false;
-    }*/
-    constText=displayText;
     this->textLabel->setAlignment(Qt::AlignCenter);
     this->textLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     textLabel -> setStyleSheet("color: black;");
     setLayout(layout);
     connect(colorAnimation, &QVariantAnimation::valueChanged, this, &CourseCell::onAnimationValueChanged);
     colorAnimation->setDuration(500);
+    setDisplayText(displayText);
 }
 
-void CourseCell::setDisplayText(const QString& str, bool hasCourse) {
-    QString displayText=str;
-    if(str.length() > 10) {
-        int midPoint = str.length() / 2;
-        while(midPoint > 0 && str[midPoint] != ' ' && str[midPoint] != '-') {
-            midPoint--;
-        }
-        if(midPoint == 0) midPoint = str.length() / 2;
-
-        displayText = str.left(midPoint) + "\n" + str.mid(midPoint);
-    }
-
-    this->textLabel->setText(displayText);
-    // this->textLabel->setWordWrap(true);
-
-    // if (hasCourse) {
-    //     this->textLabel->setStyleSheet("color: rgb(25, 118, 210);");
-    // } else {
-    //     this->textLabel->setStyleSheet("color: rgb(0, 0, 0);");
-    // }
+void CourseCell::setDisplayText(const QString& str) {
+    nowOriginalText = str;
+    QFontMetrics fontMetrics(textLabel -> font());
+    QString showText = fontMetrics.elidedText(nowOriginalText, Qt::ElideRight, textLabel -> width());
+    textLabel -> setText(showText);
 }
+
+void CourseCell::resizeEvent(QResizeEvent *event) {
+    setDisplayText(nowOriginalText);
+    QWidget::resizeEvent(event);
+}
+
 void CourseCell::mousePressEvent(QMouseEvent* e){
-    qDebug() << "mouse pressed!!!111";
-    if(!disabled && e->button() == Qt::LeftButton){
+    if(!(canDisable && disabled) && e->button() == Qt::LeftButton){
         emit clicked();
         colorAnimation->setDuration(100);
         colorAnimation->setStartValue(currentColor);
         colorAnimation->setEndValue(pressedColor);
         colorAnimation->start();
-    } else if(e->button() == Qt::RightButton){
+    } else if(canDisable && e->button() == Qt::RightButton){
         if(!disabled){
             disabled = true;
             colorAnimation->setDuration(300);
@@ -75,7 +59,7 @@ void CourseCell::mousePressEvent(QMouseEvent* e){
 }
 
 void CourseCell::mouseReleaseEvent(QMouseEvent* e){
-    if(!disabled && e->button() == Qt::LeftButton){
+    if(!(canDisable && disabled) && e->button() == Qt::LeftButton){
         colorAnimation->setDuration(300);
         colorAnimation->setStartValue(currentColor);
         colorAnimation->setEndValue(baseColor);
@@ -89,18 +73,6 @@ void CourseCell::paintEvent(QPaintEvent* e){
     painter.fillRect(1, 1, width() - 2, height() - 2, currentColor);
     painter.setPen(QPen(QColor(100, 100, 100), 1));
     painter.drawRect(1, 1, width() - 2, height() - 2);
-    if(isConstText){
-        setDisplayText(constText);
-    } else if(!disabled){
-        if(FirstLesson.isEmpty()) setDisplayText(QString::number(num));
-        else{
-            setDisplayText(FirstLesson,true);
-        }
-    } else if(!dontwanted){
-        setDisplayText(tr("没空:("));
-    } else{
-        setDisplayText(tr("--"));
-    }
     QWidget::paintEvent(e);
 }
 
@@ -110,7 +82,7 @@ void CourseCell::onAnimationValueChanged(const QVariant& value){
 }
 
 void CourseCell::enterEvent(QEnterEvent* e){
-    if(!disabled){
+    if(!(canDisable && disabled)){
         colorAnimation->setDuration(100);
         colorAnimation->setStartValue(currentColor);
         colorAnimation->setEndValue(hoverColor);
@@ -120,7 +92,7 @@ void CourseCell::enterEvent(QEnterEvent* e){
 }
 
 void CourseCell::leaveEvent(QEvent* e){
-    if(!disabled){
+    if(!(canDisable && disabled)){
         colorAnimation->setDuration(200);
         colorAnimation->setStartValue(currentColor);
         colorAnimation->setEndValue(baseColor);

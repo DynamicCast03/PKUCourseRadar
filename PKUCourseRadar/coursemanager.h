@@ -10,11 +10,14 @@ class CourseManager : public QObject
 public:
     static CourseManager theManager;
     CourseManager();
-    QSet<Course> AllCourses;
+    QMap<QUuid, Course> AllCourses;
     QSet<QString> AllTags;
     bool readFromFile(QFile& file);
     bool writeToFile(QFile& file);
     void generateTags();
+    QUuid& getSelectedCourse(int day, int session);
+private:
+    QVector<QVector<QUuid>> selectedCourses;
 };
 
 

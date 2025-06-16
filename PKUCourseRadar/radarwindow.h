@@ -5,7 +5,7 @@
 #include "course.h"
 #include "coursemanager.h"
 #include "courseinfowindow.h"
-#include "mylesson.h"
+#include "mycourseswindow.h"
 
 namespace Ui {
 class RadarWindow;
@@ -20,8 +20,8 @@ public:
     ~RadarWindow();
     void reSearchCourses();
     void showTags();
-    bool isFree(const Course& course);
-    QVector<QVector<QSet<Course>>> nowTable;
+    bool isFree(const QUuid& course);
+    QVector<QVector<QSet<QUuid>>> nowTable;
     QVector<QVector<int>> nowDisabled;
 private slots:
     void on_i_name_textChanged(const QString &str);
@@ -40,8 +40,8 @@ private:
     QString nowBuilding;
     QString nowRoom;
     QSet<QString> nowReadyTags, nowSelectedTags;
-    QSet<Course> nowCourses;
-    MyLesson my_like_lesson;
+    QSet<QUuid> nowCourses;
+    MyCoursesWindow my_like_lesson;
     QString nowSearchingTags;
 };
 

@@ -1,129 +1,76 @@
 #include "courseinfowindow.h"
-#include "mylesson.h"
+#include "mycourseswindow.h"
 #include "mylike.h"
 #include "radarwindow.h"
 #include "ui_courseinfowindow.h"
-#include "ui_mylesson.h"
+#include "ui_mycourseswindow.h"
 
-CourseInfoWindow::CourseInfoWindow(QWidget* parent, RadarWindow* radarWindow, int x, int y)
+CourseInfoWindow::CourseInfoWindow(QWidget* parent, QVector<QUuid> courseIds, int day, int session)
     : QDialog(parent)
     , ui(new Ui::CourseInfoWindow)
-    , radar(radarWindow)
-    , x(x)
-    , y(y)
+    , courseIds(courseIds)
+    , day(day)
+    , session(session)
 {
     ui->setupUi(this);
-    QSet<Course> coursesSet = radar->nowTable[x - 1][y - 1];
-    for (Course course : coursesSet) {
-        courses.push_back(course);
-        if (course.liked)
+    // courses 是 QListWidget 的镜像, 需要保证二者一致, 因此修改 courses 时需要同步到 QListWidget, 调用 sync_list() 函数
+    sync_list();
+    ui->l_list->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(ui->l_list, &QListWidget::customContextMenuRequested, this, &CourseInfoWindow::onItemRightClicked);
+}
+
+CourseInfoWindow::~CourseInfoWindow()
+{
+    delete ui;
+}
+
+void CourseInfoWindow::sync_list()
+{
+    ui->l_list->clear();
+    for (QUuid courseId : courseIds) {
+        Course &course = CourseManager::theManager.AllCourses[courseId];
+        if (course.id == CourseManager::theManager.getSelectedCourse(day, session))
+            ui->l_list->addItem(new QListWidgetItem("👉 " + course.name));
+        else if (course.marked)
             ui->l_list->addItem(new QListWidgetItem("⭐ " + course.name));
         else
             ui->l_list->addItem(new QListWidgetItem(course.name));
     }
 }
 
-CourseInfoWindow::CourseInfoWindow(QWidget* parent, MyLesson* mylesson, int x, int y)
-    : QDialog(parent)
-    , ui(new Ui::CourseInfoWindow)
-    , my(mylesson)
-    , x(x)
-    , y(y)
-    , comefromMy(true)
+void CourseInfoWindow::on_l_list_currentItemChanged(QListWidgetItem* current, QListWidgetItem* previous)
 {
-    ui->setupUi(this);
-    QSet<Course> coursesSet = my->lesson_table[x - 1][y - 1];
-    for (Course course : coursesSet) {
-        courses.push_back(course);
-        ui->l_list->addItem((new QListWidgetItem(course.name)));
-    }
-    ui->l_list->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->l_list, &QListWidget::customContextMenuRequested,
-        this, &CourseInfoWindow::onItemRightClicked);
+    if(!current) return;
+    int row = ui->l_list->row(current);
+    ui->b_info->setText(CourseManager::theManager.AllCourses[courseIds[row]].description());
+    emit changed();
 }
 
 void CourseInfoWindow::onItemRightClicked(const QPoint& pos)
 {
     QListWidgetItem* item = ui->l_list->itemAt(pos);
-    if (item) {
-        moveItemToTop(item->text());
-    }
-}
-CourseInfoWindow::~CourseInfoWindow()
-{
-    delete ui;
-}
-
-void CourseInfoWindow::moveItemToTop(const QString& coursename)
-{
-    my->ui->MyTable->cells[x - 1][y - 1]->FirstLesson = coursename;
-    my->ui->MyTable->cells[x - 1][y - 1]->update();
-}
-
-void CourseInfoWindow::on_l_list_currentItemChanged(QListWidgetItem* current, QListWidgetItem* previous)
-{
-    int row = ui->l_list->row(current);
-    ui->b_info->setText(courses[row].description());
+    if(!item) return;
+    int row = ui->l_list->row(item);
+    Course &course = CourseManager::theManager.AllCourses[courseIds[row]];
+    course.marked = !course.marked;
+    if(!course.marked && CourseManager::theManager.getSelectedCourse(day, session) == course.id)
+        CourseManager::theManager.getSelectedCourse(day, session) = QUuid(); // 空 uuid, 全 0
+    sync_list();
+    emit changed();
 }
 
 void CourseInfoWindow::on_l_list_itemDoubleClicked(QListWidgetItem* item)
 {
+    if(!item) return;
     int row = ui->l_list->row(item);
-    if (!courses[row].liked) {
-        // QMessageBox::information(this, "提示", "已选中！");
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 12; j++) {
-                for (auto& course : radar->nowTable[i][j]) {
-                    if (course.name == courses[row].name && course.room == courses[row].room) {
-                        Course another = course;
-                        another.liked = true;
-                        radar->nowTable[i][j].remove(course);
-                        radar->nowTable[i][j].insert(another);
-                    }
-                }
-            }
-        }
-        QString originalText = item->text();
-        if (!originalText.startsWith("⭐")) {
-            item->setText("⭐ " + originalText);
-        }
-        courses[row].liked = true;
-        MyLike::the_liked.All_Liked.push_back(courses[row]);
+    Course &course = CourseManager::theManager.AllCourses[courseIds[row]];
+    // 此处 if 目的是保证同一时间只能有一个课程被选中
+    if (CourseManager::theManager.getSelectedCourse(day, session) != course.id) {
+        if(!course.marked) return; // 如果没有收藏, 就不能选中
+        CourseManager::theManager.getSelectedCourse(day, session) = course.id;
     } else {
-        MyLike::the_liked.All_Liked.removeOne(courses[row]);
-        // QMessageBox::information(this, "提示", "已退选！");
-        QString currentText = item->text();
-        if (currentText.startsWith("⭐")) {
-            QString originalText = currentText.mid(2);
-            item->setText(originalText);
-        }
-        courses[row].liked = false;
-        if (comefromMy) {
-            item->setHidden(true);
-            ui->b_info->setText("");
-            for (int i = 0; i < 7; i++) {
-                for (int j = 0; j < 12; j++) {
-                    for (auto& course : my->lesson_table[i][j]) {
-                        if (course.name == courses[row].name && course.room == courses[row].room) {
-                            my->lesson_table[i][j].remove(course);
-                        }
-                    }
-                }
-            }
-            for (int i = 0; i < 7; i++) {
-                for (int j = 0; j < 12; j++) {
-                    if (!my->lesson_table[i][j].size()) {
-                        my->ui->MyTable->cells[i][j]->disabled = 1;
-                        my->ui->MyTable->cells[i][j]->dontwanted = 1;
-                        my->ui->MyTable->cells[i][j]->update();
-                    } else {
-                        my->ui->MyTable->cells[i][j]->FirstLesson = my->lesson_table[i][j].begin()->name;
-                        my->ui->MyTable->cells[i][j]->update();
-                    }
-                }
-            }
-            // my->ui->MyTable->cells[0][0]->update();
-            // my->ui->MyTable->cells[0][0]->setDisplayText("???");
-        }
+        CourseManager::theManager.getSelectedCourse(day, session) = QUuid(); // 空 uuid, 全 0
     }
+    sync_list();
+    emit changed();
 }

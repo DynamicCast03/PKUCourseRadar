@@ -1,5 +1,5 @@
-#ifndef MYLESSON_H
-#define MYLESSON_H
+#ifndef MYCOURSESWINDOW_H
+#define MYCOURSESWINDOW_H
 
 #include <QDialog>
 #include "course.h"
@@ -10,23 +10,21 @@ namespace Ui {
 class MyLesson;
 }
 
-class MyLesson : public QDialog
+class MyCoursesWindow : public QDialog
 {
     Q_OBJECT
 
 public:
-    friend class CourseInfoWindow;
-    QVector<QVector<QSet<Course>>> lesson_table;
-    explicit MyLesson(QWidget *parent = nullptr);
-    ~MyLesson();
+    explicit MyCoursesWindow(QWidget *parent = nullptr);
+    ~MyCoursesWindow();
+    void syncCells();
 signals:
     void clicked();
 private slots:
     void cellclicked(int x,int y);
-
 private:
     Ui::MyLesson *ui;
 
 };
 
-#endif // MYLESSON_H
+#endif // MYCOURSESWINDOW_H
