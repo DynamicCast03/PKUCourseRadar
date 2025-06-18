@@ -4,6 +4,10 @@
         "regex": "cpp",
         "sstream": "cpp",
         "__locale": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "fstream": "cpp",
+        "istream": "cpp",
+        "locale": "cpp",
+        "streambuf": "cpp"
     }
 }

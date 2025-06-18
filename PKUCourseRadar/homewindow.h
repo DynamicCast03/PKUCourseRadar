@@ -18,12 +18,14 @@ class HomeWindow : public QDialog
     Q_OBJECT
 
 public:
-    HomeWindow(QWidget *parent = nullptr);
+    HomeWindow(QUuid user_uuid, QWidget *parent = nullptr);
     void readCourses();
     ~HomeWindow();
     QString config_path;
     RadarWindow *radar_window;
     MyCoursesWindow* my_like=new MyCoursesWindow;
+    QUuid user_uuid;
+    void closeEvent(QCloseEvent* e) override;
 private slots:
     void on_btn_import_clicked();
     void on_btn_start_clicked();

@@ -17,11 +17,13 @@ SOURCES += \
     coursemanager.cpp \
     coursetablewidget.cpp \
     coursetime.cpp \
+    dataaccessor.cpp \
     debug_utils.cpp \
+    jsondataaccessor.cpp \
+    loginwindow.cpp \
     main.cpp \
     homewindow.cpp \
     mycourseswindow.cpp \
-    mylike.cpp \
     radarwindow.cpp \
     utils.cpp
 
@@ -34,11 +36,13 @@ HEADERS += \
     coursemanager.h \
     coursetablewidget.h \
     coursetime.h \
+    dataaccessor.h \
     debug_utils.h \
     en_US.h \
     homewindow.h \
+    jsondataaccessor.h \
+    loginwindow.h \
     mycourseswindow.h \
-    mylike.h \
     radarwindow.h \
     stdc++.h \
     utils.h \
@@ -48,6 +52,7 @@ FORMS += \
     aboutus.ui \
     courseinfowindow.ui \
     homewindow.ui \
+    loginwindow.ui \
     mycourseswindow.ui \
     radarwindow.ui
 

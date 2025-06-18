@@ -4,6 +4,18 @@
 #include "utils.h"
 #include "course.h"
 
+class CourseComment{
+public:
+    QUuid commentId;
+    QUuid courseId;
+    QString comment;
+    QUuid commenterId;
+    unsigned long long commentTime;
+    double rating;
+    int likes;
+    int dislikes;
+};
+
 class CourseManager : public QObject
 {
     Q_OBJECT
@@ -12,11 +24,11 @@ public:
     CourseManager();
     QMap<QUuid, Course> AllCourses;
     QSet<QString> AllTags;
+    QMap<QUuid, CourseComment> AllComments;
     bool readFromFile(QFile& file);
     bool writeToFile(QFile& file);
     void generateTags();
     QUuid& getSelectedCourse(int day, int session);
-private:
     QVector<QVector<QUuid>> selectedCourses;
 };
 

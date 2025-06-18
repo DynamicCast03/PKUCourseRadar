@@ -1,0 +1,3481 @@
+[
+  {
+    "name": "Course_1_1x4Qr",
+    "building": "Building_ji",
+    "room": "600",
+    "teacher": "Teacher_uE0k",
+    "courseTime": [
+      [
+        5,
+        8
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        7
+      ],
+      [
+        7,
+        11,
+        12
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        3
+      ]
+    ],
+    "tags": [
+      "Tag_g2F",
+      "Tag_kw8",
+      "Tag_ai0",
+      "Tag_ZyT"
+    ]
+  },
+  {
+    "name": "Course_2_jaCiF",
+    "building": "Building_Uo",
+    "room": "899",
+    "teacher": "Teacher_6TdA",
+    "courseTime": [
+      [
+        12
+      ],
+      [
+        6,
+        9,
+        10
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        2,
+        9,
+        10
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_92Y"
+    ]
+  },
+  {
+    "name": "Course_3_i6FZJ",
+    "building": "Building_Et",
+    "room": "488",
+    "teacher": "Teacher_Rjd6",
+    "courseTime": [
+      [
+        7,
+        12
+      ],
+      [],
+      [
+        4,
+        7
+      ],
+      [
+        2
+      ],
+      [
+        5,
+        9,
+        10
+      ],
+      [
+        8
+      ],
+      [
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_ISB",
+      "Tag_zE1",
+      "Tag_u6D",
+      "Tag_lu3"
+    ]
+  },
+  {
+    "name": "Course_4_wUvcu",
+    "building": "Building_3l",
+    "room": "139",
+    "teacher": "Teacher_kQ9M",
+    "courseTime": [
+      [
+        2,
+        9
+      ],
+      [
+        8
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        3,
+        10
+      ],
+      [
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        6,
+        8
+      ],
+      []
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_5_W5lS8",
+    "building": "Building_nL",
+    "room": "923",
+    "teacher": "Teacher_IC4d",
+    "courseTime": [
+      [
+        2,
+        10
+      ],
+      [
+        4,
+        6
+      ],
+      [],
+      [],
+      [
+        5,
+        7
+      ],
+      [
+        3,
+        7,
+        9
+      ],
+      [
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_C5Q"
+    ]
+  },
+  {
+    "name": "Course_6_AFC7j",
+    "building": "Building_Er",
+    "room": "809",
+    "teacher": "Teacher_fzpW",
+    "courseTime": [
+      [],
+      [
+        12
+      ],
+      [
+        10
+      ],
+      [],
+      [
+        11
+      ],
+      [],
+      [
+        3,
+        4
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_7_brkWV",
+    "building": "Building_Ul",
+    "room": "424",
+    "teacher": "Teacher_t0OC",
+    "courseTime": [
+      [
+        12
+      ],
+      [
+        3,
+        4,
+        9
+      ],
+      [
+        5
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        2,
+        4,
+        8
+      ],
+      [
+        10,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_rUm",
+      "Tag_bRK",
+      "Tag_VpA"
+    ]
+  },
+  {
+    "name": "Course_8_NcUAh",
+    "building": "Building_BB",
+    "room": "238",
+    "teacher": "Teacher_5MKQ",
+    "courseTime": [
+      [],
+      [
+        6,
+        9
+      ],
+      [],
+      [
+        2,
+        5
+      ],
+      [
+        9
+      ],
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "tags": [
+      "Tag_sZ7",
+      "Tag_99a",
+      "Tag_Ho9",
+      "Tag_CMo"
+    ]
+  },
+  {
+    "name": "Course_9_fMOlB",
+    "building": "Building_O9",
+    "room": "438",
+    "teacher": "Teacher_w0VT",
+    "courseTime": [
+      [
+        2,
+        3
+      ],
+      [
+        2
+      ],
+      [],
+      [],
+      [
+        3,
+        4,
+        6
+      ],
+      [
+        3,
+        7,
+        12
+      ],
+      [
+        6
+      ]
+    ],
+    "tags": [
+      "Tag_iHp",
+      "Tag_tEs",
+      "Tag_FWT"
+    ]
+  },
+  {
+    "name": "Course_10_222zh",
+    "building": "Building_lD",
+    "room": "391",
+    "teacher": "Teacher_1e0K",
+    "courseTime": [
+      [],
+      [],
+      [
+        2,
+        8
+      ],
+      [],
+      [
+        7,
+        11,
+        12
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_R5s",
+      "Tag_f2f"
+    ]
+  },
+  {
+    "name": "Course_11_pm8yG",
+    "building": "Building_Rw",
+    "room": "817",
+    "teacher": "Teacher_0Hxg",
+    "courseTime": [
+      [
+        3,
+        12
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        7
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        7,
+        10
+      ],
+      [],
+      [
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_vYL"
+    ]
+  },
+  {
+    "name": "Course_12_119yC",
+    "building": "Building_ji",
+    "room": "127",
+    "teacher": "Teacher_yoIC",
+    "courseTime": [
+      [
+        2,
+        9,
+        11
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        10
+      ],
+      [
+        4,
+        11,
+        12
+      ],
+      [
+        5,
+        6,
+        10
+      ],
+      [
+        8
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_Bgk"
+    ]
+  },
+  {
+    "name": "Course_13_hurDw",
+    "building": "Building_xH",
+    "room": "468",
+    "teacher": "Teacher_ORJX",
+    "courseTime": [
+      [
+        1,
+        8,
+        11
+      ],
+      [],
+      [
+        12
+      ],
+      [
+        12
+      ],
+      [
+        3,
+        5,
+        8
+      ],
+      [
+        3,
+        11,
+        12
+      ],
+      [
+        3,
+        9,
+        12
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_14_SGADS",
+    "building": "Building_tY",
+    "room": "217",
+    "teacher": "Teacher_JJhI",
+    "courseTime": [
+      [],
+      [
+        2,
+        6,
+        9
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        1,
+        12
+      ],
+      [],
+      [
+        5,
+        9
+      ]
+    ],
+    "tags": [
+      "Tag_p7g"
+    ]
+  },
+  {
+    "name": "Course_15_rFWAO",
+    "building": "Building_P2",
+    "room": "825",
+    "teacher": "Teacher_S5gx",
+    "courseTime": [
+      [
+        9,
+        10
+      ],
+      [],
+      [
+        1,
+        5,
+        10
+      ],
+      [
+        2,
+        5
+      ],
+      [],
+      [
+        1,
+        9,
+        10
+      ],
+      [
+        5
+      ]
+    ],
+    "tags": [
+      "Tag_zrZ",
+      "Tag_FJR",
+      "Tag_D1q"
+    ]
+  },
+  {
+    "name": "Course_16_J2Ru2",
+    "building": "Building_aE",
+    "room": "965",
+    "teacher": "Teacher_OATZ",
+    "courseTime": [
+      [
+        3,
+        12
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        10
+      ],
+      [
+        2,
+        8,
+        10
+      ],
+      [],
+      [
+        1,
+        5,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "tags": [
+      "Tag_8On",
+      "Tag_TUV",
+      "Tag_DFz"
+    ]
+  },
+  {
+    "name": "Course_17_pWg7L",
+    "building": "Building_kd",
+    "room": "103",
+    "teacher": "Teacher_NNbP",
+    "courseTime": [
+      [],
+      [
+        7
+      ],
+      [
+        3,
+        5,
+        7
+      ],
+      [
+        1,
+        9
+      ],
+      [],
+      [
+        1,
+        9
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_bTL"
+    ]
+  },
+  {
+    "name": "Course_18_b6JmI",
+    "building": "Building_kr",
+    "room": "878",
+    "teacher": "Teacher_wpIt",
+    "courseTime": [
+      [
+        3,
+        9
+      ],
+      [],
+      [
+        3
+      ],
+      [],
+      [
+        9,
+        10
+      ],
+      [
+        1,
+        7
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_0yn",
+      "Tag_brK",
+      "Tag_NjR",
+      "Tag_iVv"
+    ]
+  },
+  {
+    "name": "Course_19_xsWbs",
+    "building": "Building_rZ",
+    "room": "972",
+    "teacher": "Teacher_1FP1",
+    "courseTime": [
+      [
+        3
+      ],
+      [],
+      [
+        1,
+        6,
+        9
+      ],
+      [],
+      [],
+      [
+        7,
+        9,
+        12
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_45E"
+    ]
+  },
+  {
+    "name": "Course_20_NAL26",
+    "building": "Building_Df",
+    "room": "355",
+    "teacher": "Teacher_85f8",
+    "courseTime": [
+      [
+        3,
+        11
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        3,
+        6,
+        8
+      ],
+      [],
+      [
+        9
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_21_KaORL",
+    "building": "Building_4D",
+    "room": "125",
+    "teacher": "Teacher_v0Ql",
+    "courseTime": [
+      [
+        6,
+        7,
+        11
+      ],
+      [
+        1,
+        5,
+        10
+      ],
+      [
+        2,
+        3,
+        11
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        7
+      ],
+      [
+        1,
+        10,
+        11
+      ]
+    ],
+    "tags": [
+      "Tag_fsa",
+      "Tag_H9H"
+    ]
+  },
+  {
+    "name": "Course_22_psVwp",
+    "building": "Building_o5",
+    "room": "154",
+    "teacher": "Teacher_ZUcf",
+    "courseTime": [
+      [],
+      [
+        6
+      ],
+      [],
+      [],
+      [],
+      [
+        9,
+        12
+      ],
+      [
+        1,
+        10,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_Vk6",
+      "Tag_5LF",
+      "Tag_RHK",
+      "Tag_3OV"
+    ]
+  },
+  {
+    "name": "Course_23_lVUbs",
+    "building": "Building_Nc",
+    "room": "702",
+    "teacher": "Teacher_iGeG",
+    "courseTime": [
+      [
+        1,
+        9
+      ],
+      [
+        10,
+        12
+      ],
+      [],
+      [
+        10,
+        11
+      ],
+      [
+        4,
+        8,
+        9
+      ],
+      [
+        1
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_PMs",
+      "Tag_aUX"
+    ]
+  },
+  {
+    "name": "Course_24_Xxthr",
+    "building": "Building_Ss",
+    "room": "165",
+    "teacher": "Teacher_E2UQ",
+    "courseTime": [
+      [
+        1,
+        5,
+        11
+      ],
+      [
+        3,
+        10,
+        11
+      ],
+      [
+        1,
+        4,
+        9
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        3,
+        10
+      ],
+      [
+        6,
+        7,
+        9
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_tVC",
+      "Tag_46G",
+      "Tag_Ocr"
+    ]
+  },
+  {
+    "name": "Course_25_HuD0m",
+    "building": "Building_vv",
+    "room": "905",
+    "teacher": "Teacher_vA0I",
+    "courseTime": [
+      [
+        5,
+        10
+      ],
+      [
+        9
+      ],
+      [
+        9,
+        10,
+        12
+      ],
+      [
+        9
+      ],
+      [
+        3,
+        10,
+        11
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6
+      ]
+    ],
+    "tags": [
+      "Tag_HsD",
+      "Tag_P6d",
+      "Tag_6c0",
+      "Tag_bbs"
+    ]
+  },
+  {
+    "name": "Course_26_6pWEv",
+    "building": "Building_VQ",
+    "room": "471",
+    "teacher": "Teacher_npVr",
+    "courseTime": [
+      [],
+      [
+        9
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        2,
+        3,
+        5
+      ],
+      [],
+      [
+        2,
+        3,
+        5
+      ],
+      [
+        1,
+        2,
+        8
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_27_IhgRo",
+    "building": "Building_LK",
+    "room": "884",
+    "teacher": "Teacher_7yru",
+    "courseTime": [
+      [
+        7,
+        10
+      ],
+      [
+        8
+      ],
+      [],
+      [
+        3,
+        8
+      ],
+      [
+        8
+      ],
+      [
+        7
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "tags": [
+      "Tag_Hq5",
+      "Tag_lsW"
+    ]
+  },
+  {
+    "name": "Course_28_2kyF9",
+    "building": "Building_Pz",
+    "room": "838",
+    "teacher": "Teacher_qxEO",
+    "courseTime": [
+      [],
+      [
+        5,
+        6,
+        11
+      ],
+      [
+        4,
+        5,
+        6
+      ],
+      [],
+      [],
+      [
+        5,
+        9
+      ],
+      [
+        9,
+        12
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_29_rbtA1",
+    "building": "Building_ct",
+    "room": "435",
+    "teacher": "Teacher_UDfr",
+    "courseTime": [
+      [],
+      [
+        3,
+        9,
+        10
+      ],
+      [],
+      [
+        1,
+        7,
+        8
+      ],
+      [
+        7
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        4
+      ]
+    ],
+    "tags": [
+      "Tag_bNi"
+    ]
+  },
+  {
+    "name": "Course_30_1jnbX",
+    "building": "Building_Wa",
+    "room": "965",
+    "teacher": "Teacher_NirG",
+    "courseTime": [
+      [
+        1,
+        2,
+        7
+      ],
+      [],
+      [
+        4,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        6,
+        9,
+        10
+      ],
+      [],
+      []
+    ],
+    "tags": [
+      "Tag_CSY",
+      "Tag_N21",
+      "Tag_txY",
+      "Tag_Jxz"
+    ]
+  },
+  {
+    "name": "Course_31_BWZ47",
+    "building": "Building_di",
+    "room": "603",
+    "teacher": "Teacher_9Xug",
+    "courseTime": [
+      [],
+      [
+        8
+      ],
+      [
+        8
+      ],
+      [
+        2,
+        8,
+        9
+      ],
+      [
+        8,
+        9,
+        12
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        5,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_fF8",
+      "Tag_Xqw",
+      "Tag_P63"
+    ]
+  },
+  {
+    "name": "Course_32_9QWq3",
+    "building": "Building_uM",
+    "room": "667",
+    "teacher": "Teacher_71Pn",
+    "courseTime": [
+      [
+        10,
+        12
+      ],
+      [
+        3
+      ],
+      [],
+      [
+        7,
+        11
+      ],
+      [
+        4,
+        5,
+        10
+      ],
+      [
+        11
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_h67"
+    ]
+  },
+  {
+    "name": "Course_33_1AZb6",
+    "building": "Building_bn",
+    "room": "594",
+    "teacher": "Teacher_McqD",
+    "courseTime": [
+      [
+        1,
+        3,
+        11
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        2,
+        6,
+        8
+      ],
+      [
+        4,
+        8,
+        12
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        4,
+        5,
+        9
+      ]
+    ],
+    "tags": [
+      "Tag_m7T"
+    ]
+  },
+  {
+    "name": "Course_34_F4mgi",
+    "building": "Building_Iq",
+    "room": "400",
+    "teacher": "Teacher_VjDm",
+    "courseTime": [
+      [],
+      [
+        5
+      ],
+      [
+        4,
+        11
+      ],
+      [],
+      [
+        2,
+        9
+      ],
+      [
+        1,
+        11
+      ],
+      [
+        6
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_35_4ODpa",
+    "building": "Building_sf",
+    "room": "680",
+    "teacher": "Teacher_mLuL",
+    "courseTime": [
+      [],
+      [
+        5,
+        11
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        9,
+        10
+      ],
+      [],
+      [
+        6
+      ],
+      [
+        6
+      ]
+    ],
+    "tags": [
+      "Tag_Bs5",
+      "Tag_QfV"
+    ]
+  },
+  {
+    "name": "Course_36_CtR3i",
+    "building": "Building_6R",
+    "room": "983",
+    "teacher": "Teacher_68Il",
+    "courseTime": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        5,
+        6,
+        9
+      ],
+      [
+        4,
+        6,
+        10
+      ],
+      [],
+      [
+        10
+      ]
+    ],
+    "tags": [
+      "Tag_jkA",
+      "Tag_jYI"
+    ]
+  },
+  {
+    "name": "Course_37_GGETF",
+    "building": "Building_Ip",
+    "room": "517",
+    "teacher": "Teacher_JG3A",
+    "courseTime": [
+      [
+        1,
+        3,
+        7
+      ],
+      [],
+      [
+        2,
+        10
+      ],
+      [
+        7,
+        8,
+        11
+      ],
+      [
+        2,
+        3,
+        9
+      ],
+      [
+        10
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "tags": [
+      "Tag_XCi",
+      "Tag_9m3",
+      "Tag_VVg"
+    ]
+  },
+  {
+    "name": "Course_38_Vpagv",
+    "building": "Building_0v",
+    "room": "793",
+    "teacher": "Teacher_CKFt",
+    "courseTime": [
+      [],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        10,
+        12
+      ],
+      [
+        5,
+        8
+      ],
+      [],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "tags": [
+      "Tag_cvq"
+    ]
+  },
+  {
+    "name": "Course_39_z79fc",
+    "building": "Building_vh",
+    "room": "260",
+    "teacher": "Teacher_DNJs",
+    "courseTime": [
+      [],
+      [],
+      [],
+      [
+        11
+      ],
+      [
+        8
+      ],
+      [
+        8,
+        10,
+        11
+      ],
+      [
+        5,
+        9,
+        10
+      ]
+    ],
+    "tags": [
+      "Tag_ncq",
+      "Tag_OGf",
+      "Tag_JGW",
+      "Tag_R48"
+    ]
+  },
+  {
+    "name": "Course_40_Xjsoq",
+    "building": "Building_Tp",
+    "room": "250",
+    "teacher": "Teacher_3dWE",
+    "courseTime": [
+      [
+        5,
+        10
+      ],
+      [
+        10
+      ],
+      [
+        1
+      ],
+      [
+        1,
+        8,
+        10
+      ],
+      [
+        4,
+        5,
+        7
+      ],
+      [],
+      []
+    ],
+    "tags": [
+      "Tag_JpN",
+      "Tag_32O",
+      "Tag_J1N",
+      "Tag_rX2"
+    ]
+  },
+  {
+    "name": "Course_41_57rYI",
+    "building": "Building_pl",
+    "room": "994",
+    "teacher": "Teacher_Q02I",
+    "courseTime": [
+      [],
+      [
+        4,
+        10
+      ],
+      [
+        12
+      ],
+      [],
+      [],
+      [
+        8
+      ],
+      [
+        1,
+        3,
+        6
+      ]
+    ],
+    "tags": [
+      "Tag_OMq"
+    ]
+  },
+  {
+    "name": "Course_42_SgN8I",
+    "building": "Building_an",
+    "room": "715",
+    "teacher": "Teacher_Eiwc",
+    "courseTime": [
+      [],
+      [],
+      [],
+      [
+        11
+      ],
+      [],
+      [
+        7,
+        12
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_xzF",
+      "Tag_hhY",
+      "Tag_uhz"
+    ]
+  },
+  {
+    "name": "Course_43_MID05",
+    "building": "Building_XE",
+    "room": "103",
+    "teacher": "Teacher_hnyt",
+    "courseTime": [
+      [
+        3,
+        4,
+        7
+      ],
+      [
+        2
+      ],
+      [],
+      [
+        12
+      ],
+      [
+        7
+      ],
+      [],
+      [
+        9
+      ]
+    ],
+    "tags": [
+      "Tag_1qU"
+    ]
+  },
+  {
+    "name": "Course_44_JpcQS",
+    "building": "Building_Kd",
+    "room": "211",
+    "teacher": "Teacher_zARu",
+    "courseTime": [
+      [
+        5,
+        9
+      ],
+      [
+        12
+      ],
+      [
+        6
+      ],
+      [
+        2,
+        9,
+        11
+      ],
+      [
+        1,
+        8,
+        12
+      ],
+      [
+        2
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "tags": [
+      "Tag_DE0",
+      "Tag_6vI",
+      "Tag_w6n"
+    ]
+  },
+  {
+    "name": "Course_45_C5qxd",
+    "building": "Building_N0",
+    "room": "899",
+    "teacher": "Teacher_2aAw",
+    "courseTime": [
+      [
+        8,
+        12
+      ],
+      [
+        1,
+        6,
+        11
+      ],
+      [
+        1,
+        5,
+        7
+      ],
+      [
+        9
+      ],
+      [
+        8,
+        9,
+        10
+      ],
+      [
+        6
+      ],
+      []
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_46_kWtER",
+    "building": "Building_nc",
+    "room": "241",
+    "teacher": "Teacher_yP6J",
+    "courseTime": [
+      [
+        5,
+        11,
+        12
+      ],
+      [],
+      [],
+      [
+        12
+      ],
+      [],
+      [
+        5
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_FxX"
+    ]
+  },
+  {
+    "name": "Course_47_25eU2",
+    "building": "Building_lF",
+    "room": "116",
+    "teacher": "Teacher_G7BJ",
+    "courseTime": [
+      [
+        7,
+        8,
+        9
+      ],
+      [
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [],
+      [
+        4,
+        5,
+        12
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        1,
+        9,
+        11
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_48_0rsUD",
+    "building": "Building_63",
+    "room": "307",
+    "teacher": "Teacher_GTwn",
+    "courseTime": [
+      [],
+      [],
+      [
+        4
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        9
+      ],
+      [
+        10,
+        11,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_OLE",
+      "Tag_HNW",
+      "Tag_qDZ",
+      "Tag_zD0"
+    ]
+  },
+  {
+    "name": "Course_49_iJbQG",
+    "building": "Building_sY",
+    "room": "265",
+    "teacher": "Teacher_y9hn",
+    "courseTime": [
+      [
+        5,
+        10
+      ],
+      [
+        7
+      ],
+      [
+        2,
+        5,
+        6
+      ],
+      [],
+      [
+        7
+      ],
+      [],
+      [
+        4
+      ]
+    ],
+    "tags": [
+      "Tag_fjj",
+      "Tag_Gei",
+      "Tag_PiE"
+    ]
+  },
+  {
+    "name": "Course_50_rxYNu",
+    "building": "Building_om",
+    "room": "473",
+    "teacher": "Teacher_gx2D",
+    "courseTime": [
+      [],
+      [
+        10
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        6
+      ],
+      [
+        2,
+        6,
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_rYL",
+      "Tag_pNi"
+    ]
+  },
+  {
+    "name": "Course_51_Sve9k",
+    "building": "Building_m3",
+    "room": "275",
+    "teacher": "Teacher_QsXZ",
+    "courseTime": [
+      [
+        3,
+        6,
+        10
+      ],
+      [],
+      [
+        3,
+        6,
+        11
+      ],
+      [
+        5,
+        6,
+        12
+      ],
+      [],
+      [
+        7,
+        10
+      ],
+      []
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_52_JKKMC",
+    "building": "Building_Us",
+    "room": "730",
+    "teacher": "Teacher_4a9n",
+    "courseTime": [
+      [
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        10
+      ],
+      [
+        1,
+        9,
+        11
+      ],
+      [
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        5,
+        7,
+        8
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_53_fSSm0",
+    "building": "Building_no",
+    "room": "471",
+    "teacher": "Teacher_AsGL",
+    "courseTime": [
+      [
+        3,
+        6,
+        8
+      ],
+      [
+        3
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        1,
+        5,
+        6
+      ]
+    ],
+    "tags": [
+      "Tag_PKo",
+      "Tag_oXb"
+    ]
+  },
+  {
+    "name": "Course_54_owJgA",
+    "building": "Building_px",
+    "room": "732",
+    "teacher": "Teacher_OVSv",
+    "courseTime": [
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        4,
+        7
+      ],
+      [
+        3
+      ],
+      [
+        12
+      ],
+      [
+        3,
+        10
+      ],
+      [],
+      [
+        1
+      ]
+    ],
+    "tags": [
+      "Tag_rvN"
+    ]
+  },
+  {
+    "name": "Course_55_zzkA3",
+    "building": "Building_0p",
+    "room": "319",
+    "teacher": "Teacher_3rEM",
+    "courseTime": [
+      [
+        3
+      ],
+      [],
+      [
+        5,
+        11
+      ],
+      [
+        3,
+        6,
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        4,
+        5,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_ckf"
+    ]
+  },
+  {
+    "name": "Course_56_2nCDu",
+    "building": "Building_07",
+    "room": "630",
+    "teacher": "Teacher_K74G",
+    "courseTime": [
+      [
+        2,
+        9,
+        10
+      ],
+      [
+        7
+      ],
+      [],
+      [
+        9,
+        12
+      ],
+      [
+        4,
+        5,
+        7
+      ],
+      [
+        3,
+        10
+      ],
+      []
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_57_OqIZv",
+    "building": "Building_Px",
+    "room": "285",
+    "teacher": "Teacher_PiDg",
+    "courseTime": [
+      [
+        9
+      ],
+      [],
+      [],
+      [],
+      [
+        3,
+        6,
+        9
+      ],
+      [],
+      [
+        1,
+        7,
+        9
+      ]
+    ],
+    "tags": [
+      "Tag_Aic",
+      "Tag_xmw",
+      "Tag_CSQ",
+      "Tag_Fn0"
+    ]
+  },
+  {
+    "name": "Course_58_6KMB0",
+    "building": "Building_oR",
+    "room": "599",
+    "teacher": "Teacher_RKld",
+    "courseTime": [
+      [],
+      [
+        4
+      ],
+      [],
+      [
+        8
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        5,
+        9,
+        11
+      ],
+      [
+        2
+      ]
+    ],
+    "tags": [
+      "Tag_n43"
+    ]
+  },
+  {
+    "name": "Course_59_xbWOQ",
+    "building": "Building_D0",
+    "room": "704",
+    "teacher": "Teacher_vfIX",
+    "courseTime": [
+      [
+        9,
+        11
+      ],
+      [],
+      [],
+      [],
+      [
+        1,
+        6
+      ],
+      [
+        10
+      ],
+      [
+        4,
+        11
+      ]
+    ],
+    "tags": [
+      "Tag_eeJ",
+      "Tag_KuI",
+      "Tag_IrQ"
+    ]
+  },
+  {
+    "name": "Course_60_8BK2N",
+    "building": "Building_Wd",
+    "room": "188",
+    "teacher": "Teacher_7PqO",
+    "courseTime": [
+      [
+        5,
+        6
+      ],
+      [
+        1,
+        3,
+        7
+      ],
+      [],
+      [
+        5,
+        10,
+        11
+      ],
+      [
+        6
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_61_TkpYW",
+    "building": "Building_xc",
+    "room": "824",
+    "teacher": "Teacher_x2rg",
+    "courseTime": [
+      [
+        1
+      ],
+      [
+        3,
+        10,
+        11
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5,
+        10
+      ],
+      [
+        3,
+        10,
+        11
+      ],
+      [
+        3
+      ]
+    ],
+    "tags": [
+      "Tag_Wt4",
+      "Tag_IiT",
+      "Tag_nD5"
+    ]
+  },
+  {
+    "name": "Course_62_zuzIY",
+    "building": "Building_vW",
+    "room": "354",
+    "teacher": "Teacher_6SeZ",
+    "courseTime": [
+      [],
+      [],
+      [],
+      [
+        8,
+        9,
+        12
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        2,
+        5,
+        6
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_qx0",
+      "Tag_ol8",
+      "Tag_nVe",
+      "Tag_flr"
+    ]
+  },
+  {
+    "name": "Course_63_AzJHa",
+    "building": "Building_Mb",
+    "room": "380",
+    "teacher": "Teacher_1jta",
+    "courseTime": [
+      [
+        1
+      ],
+      [
+        6
+      ],
+      [
+        4,
+        6,
+        12
+      ],
+      [],
+      [
+        2,
+        7,
+        8
+      ],
+      [
+        2
+      ],
+      [
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_j9Q",
+      "Tag_f1y",
+      "Tag_Yte",
+      "Tag_pEL"
+    ]
+  },
+  {
+    "name": "Course_64_NBz37",
+    "building": "Building_zW",
+    "room": "943",
+    "teacher": "Teacher_WugG",
+    "courseTime": [
+      [
+        3,
+        7
+      ],
+      [],
+      [
+        3,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [],
+      [],
+      []
+    ],
+    "tags": [
+      "Tag_5ga"
+    ]
+  },
+  {
+    "name": "Course_65_8kP8C",
+    "building": "Building_H4",
+    "room": "973",
+    "teacher": "Teacher_Wiim",
+    "courseTime": [
+      [
+        3
+      ],
+      [
+        1,
+        3,
+        11
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        12
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_iWo",
+      "Tag_T7f",
+      "Tag_DJb"
+    ]
+  },
+  {
+    "name": "Course_66_8ibA1",
+    "building": "Building_0H",
+    "room": "980",
+    "teacher": "Teacher_tF5m",
+    "courseTime": [
+      [
+        4,
+        7,
+        12
+      ],
+      [],
+      [
+        6,
+        7,
+        8
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        5
+      ],
+      [],
+      [
+        1,
+        11
+      ]
+    ],
+    "tags": [
+      "Tag_Ltv",
+      "Tag_upP",
+      "Tag_oyn",
+      "Tag_HWs"
+    ]
+  },
+  {
+    "name": "Course_67_F1ith",
+    "building": "Building_AH",
+    "room": "770",
+    "teacher": "Teacher_gbc0",
+    "courseTime": [
+      [
+        9
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        1,
+        10,
+        11
+      ],
+      [],
+      [
+        5,
+        7
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_68_UgOrw",
+    "building": "Building_M1",
+    "room": "125",
+    "teacher": "Teacher_IC0z",
+    "courseTime": [
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        12
+      ],
+      [
+        6,
+        8,
+        12
+      ],
+      [
+        4,
+        7,
+        10
+      ],
+      [
+        5
+      ],
+      [
+        1,
+        12
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_69_C7HUw",
+    "building": "Building_cu",
+    "room": "533",
+    "teacher": "Teacher_ApVq",
+    "courseTime": [
+      [
+        8,
+        10,
+        12
+      ],
+      [
+        11
+      ],
+      [
+        2
+      ],
+      [
+        12
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        3
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "tags": [
+      "Tag_nFE"
+    ]
+  },
+  {
+    "name": "Course_70_XZHZ2",
+    "building": "Building_Er",
+    "room": "165",
+    "teacher": "Teacher_cw0D",
+    "courseTime": [
+      [],
+      [
+        3,
+        9,
+        10
+      ],
+      [
+        1,
+        5,
+        8
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        5
+      ],
+      [
+        9
+      ],
+      [
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_8cs"
+    ]
+  },
+  {
+    "name": "Course_71_XAxpM",
+    "building": "Building_d3",
+    "room": "493",
+    "teacher": "Teacher_CePF",
+    "courseTime": [
+      [],
+      [
+        6,
+        7
+      ],
+      [
+        4,
+        9,
+        12
+      ],
+      [
+        6,
+        11
+      ],
+      [],
+      [
+        10
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_Cvv"
+    ]
+  },
+  {
+    "name": "Course_72_N8GVV",
+    "building": "Building_u0",
+    "room": "490",
+    "teacher": "Teacher_1gdF",
+    "courseTime": [
+      [],
+      [
+        4
+      ],
+      [
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        4
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        2,
+        3,
+        11
+      ]
+    ],
+    "tags": [
+      "Tag_PrQ"
+    ]
+  },
+  {
+    "name": "Course_73_1dI75",
+    "building": "Building_TE",
+    "room": "135",
+    "teacher": "Teacher_EvLD",
+    "courseTime": [
+      [
+        8
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [],
+      [
+        7
+      ],
+      [
+        8,
+        9,
+        12
+      ],
+      [
+        11
+      ],
+      [
+        5
+      ]
+    ],
+    "tags": [
+      "Tag_XsT",
+      "Tag_gOp"
+    ]
+  },
+  {
+    "name": "Course_74_YJqen",
+    "building": "Building_1a",
+    "room": "414",
+    "teacher": "Teacher_r9Az",
+    "courseTime": [
+      [
+        2
+      ],
+      [
+        1,
+        8,
+        10
+      ],
+      [],
+      [],
+      [],
+      [],
+      [
+        2,
+        5,
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_PKD"
+    ]
+  },
+  {
+    "name": "Course_75_cKGzZ",
+    "building": "Building_pY",
+    "room": "569",
+    "teacher": "Teacher_CtfA",
+    "courseTime": [
+      [
+        2,
+        3,
+        5
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        2
+      ],
+      [],
+      [
+        1
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "tags": [
+      "Tag_5oS",
+      "Tag_Pm7",
+      "Tag_fjK"
+    ]
+  },
+  {
+    "name": "Course_76_WByM4",
+    "building": "Building_kw",
+    "room": "924",
+    "teacher": "Teacher_Z29C",
+    "courseTime": [
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        12
+      ],
+      [
+        2,
+        6,
+        9
+      ],
+      [
+        4,
+        10,
+        11
+      ],
+      [
+        3
+      ],
+      [
+        9
+      ],
+      [
+        2
+      ]
+    ],
+    "tags": [
+      "Tag_VP9",
+      "Tag_Gkh",
+      "Tag_WaK"
+    ]
+  },
+  {
+    "name": "Course_77_MLGQ5",
+    "building": "Building_YJ",
+    "room": "649",
+    "teacher": "Teacher_1cE0",
+    "courseTime": [
+      [],
+      [
+        1
+      ],
+      [],
+      [
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        3
+      ],
+      [
+        1,
+        9,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_Q8x",
+      "Tag_XpC"
+    ]
+  },
+  {
+    "name": "Course_78_cMqyf",
+    "building": "Building_4g",
+    "room": "332",
+    "teacher": "Teacher_t6E5",
+    "courseTime": [
+      [
+        1
+      ],
+      [
+        6,
+        10
+      ],
+      [],
+      [
+        1,
+        6
+      ],
+      [
+        5
+      ],
+      [],
+      [
+        3,
+        11
+      ]
+    ],
+    "tags": [
+      "Tag_kbR",
+      "Tag_Peg",
+      "Tag_ofe"
+    ]
+  },
+  {
+    "name": "Course_79_PT4gv",
+    "building": "Building_CV",
+    "room": "552",
+    "teacher": "Teacher_eWMe",
+    "courseTime": [
+      [],
+      [
+        4,
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        8
+      ],
+      [
+        1,
+        6,
+        7
+      ],
+      [
+        9
+      ],
+      [
+        7,
+        10,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_46E",
+      "Tag_3l3",
+      "Tag_o71"
+    ]
+  },
+  {
+    "name": "Course_80_stbp4",
+    "building": "Building_EB",
+    "room": "403",
+    "teacher": "Teacher_4TJb",
+    "courseTime": [
+      [
+        2
+      ],
+      [
+        6,
+        10
+      ],
+      [],
+      [
+        4,
+        5
+      ],
+      [
+        8,
+        9,
+        10
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        8
+      ]
+    ],
+    "tags": [
+      "Tag_Vb8",
+      "Tag_PC3",
+      "Tag_EVC",
+      "Tag_FLM"
+    ]
+  },
+  {
+    "name": "Course_81_lWTWs",
+    "building": "Building_3I",
+    "room": "948",
+    "teacher": "Teacher_lD0b",
+    "courseTime": [
+      [
+        4,
+        9
+      ],
+      [],
+      [],
+      [],
+      [
+        5,
+        6,
+        11
+      ],
+      [],
+      [
+        11
+      ]
+    ],
+    "tags": [
+      "Tag_9xY",
+      "Tag_RlD"
+    ]
+  },
+  {
+    "name": "Course_82_Virum",
+    "building": "Building_qk",
+    "room": "707",
+    "teacher": "Teacher_YZvo",
+    "courseTime": [
+      [
+        7,
+        9,
+        12
+      ],
+      [],
+      [
+        7,
+        10
+      ],
+      [],
+      [
+        5
+      ],
+      [
+        1
+      ],
+      [
+        3,
+        8
+      ]
+    ],
+    "tags": [
+      "Tag_nmk",
+      "Tag_rrv",
+      "Tag_8Lt"
+    ]
+  },
+  {
+    "name": "Course_83_Cub1J",
+    "building": "Building_uI",
+    "room": "379",
+    "teacher": "Teacher_74nO",
+    "courseTime": [
+      [
+        9
+      ],
+      [
+        4,
+        12
+      ],
+      [],
+      [],
+      [],
+      [],
+      [
+        4,
+        7
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_84_u0R1C",
+    "building": "Building_s3",
+    "room": "477",
+    "teacher": "Teacher_AI6R",
+    "courseTime": [
+      [
+        2,
+        7,
+        9
+      ],
+      [
+        3,
+        5,
+        6
+      ],
+      [
+        3,
+        9,
+        10
+      ],
+      [
+        7,
+        10,
+        11
+      ],
+      [
+        4,
+        9,
+        10
+      ],
+      [],
+      [
+        3,
+        11,
+        12
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_85_rhJrL",
+    "building": "Building_29",
+    "room": "115",
+    "teacher": "Teacher_QKgp",
+    "courseTime": [
+      [
+        2,
+        7,
+        9
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        8,
+        9,
+        11
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        9,
+        12
+      ],
+      [
+        6,
+        8,
+        10
+      ]
+    ],
+    "tags": [
+      "Tag_5q9"
+    ]
+  },
+  {
+    "name": "Course_86_9zzPM",
+    "building": "Building_2Q",
+    "room": "483",
+    "teacher": "Teacher_uYNl",
+    "courseTime": [
+      [
+        3,
+        6,
+        9
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        3
+      ],
+      [],
+      [
+        4
+      ],
+      [
+        7,
+        11,
+        12
+      ],
+      [
+        1,
+        3,
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_bOe",
+      "Tag_O1V",
+      "Tag_jpf"
+    ]
+  },
+  {
+    "name": "Course_87_B6W8V",
+    "building": "Building_Bz",
+    "room": "951",
+    "teacher": "Teacher_UDrE",
+    "courseTime": [
+      [
+        8,
+        9,
+        12
+      ],
+      [
+        2,
+        4,
+        10
+      ],
+      [
+        6,
+        7,
+        11
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        3,
+        6,
+        7
+      ],
+      [
+        3,
+        5,
+        9
+      ],
+      [
+        2,
+        6
+      ]
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_88_6zkdR",
+    "building": "Building_Wr",
+    "room": "813",
+    "teacher": "Teacher_m95O",
+    "courseTime": [
+      [
+        2,
+        7,
+        9
+      ],
+      [
+        2
+      ],
+      [
+        4,
+        6,
+        10
+      ],
+      [
+        6
+      ],
+      [],
+      [
+        1
+      ],
+      [
+        5,
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_LiO",
+      "Tag_00j",
+      "Tag_y97",
+      "Tag_9ZS"
+    ]
+  },
+  {
+    "name": "Course_89_PPOCM",
+    "building": "Building_ho",
+    "room": "664",
+    "teacher": "Teacher_EsgV",
+    "courseTime": [
+      [
+        1,
+        2,
+        10
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        9,
+        11
+      ],
+      [
+        9
+      ],
+      [
+        2,
+        5
+      ],
+      [],
+      [
+        3,
+        4,
+        6
+      ]
+    ],
+    "tags": [
+      "Tag_x4M",
+      "Tag_amk"
+    ]
+  },
+  {
+    "name": "Course_90_Ez8Zx",
+    "building": "Building_oK",
+    "room": "800",
+    "teacher": "Teacher_BCWm",
+    "courseTime": [
+      [
+        10
+      ],
+      [
+        4
+      ],
+      [
+        3,
+        5,
+        9
+      ],
+      [
+        2,
+        4,
+        6
+      ],
+      [
+        11
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        1,
+        2,
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_Ssr",
+      "Tag_ttN",
+      "Tag_uPc",
+      "Tag_rYR"
+    ]
+  },
+  {
+    "name": "Course_91_hqxqp",
+    "building": "Building_9A",
+    "room": "388",
+    "teacher": "Teacher_YqR7",
+    "courseTime": [
+      [],
+      [
+        6
+      ],
+      [
+        11
+      ],
+      [],
+      [
+        3,
+        6,
+        12
+      ],
+      [],
+      [
+        2,
+        4,
+        9
+      ]
+    ],
+    "tags": [
+      "Tag_bgV",
+      "Tag_2pY"
+    ]
+  },
+  {
+    "name": "Course_92_SBQeM",
+    "building": "Building_3Q",
+    "room": "474",
+    "teacher": "Teacher_yfwt",
+    "courseTime": [
+      [],
+      [
+        2,
+        8
+      ],
+      [
+        1,
+        2,
+        9
+      ],
+      [
+        9
+      ],
+      [],
+      [
+        12
+      ],
+      [
+        6
+      ]
+    ],
+    "tags": [
+      "Tag_6Ln",
+      "Tag_Wqv",
+      "Tag_InV",
+      "Tag_QYW"
+    ]
+  },
+  {
+    "name": "Course_93_GuzZl",
+    "building": "Building_Zi",
+    "room": "480",
+    "teacher": "Teacher_V4UW",
+    "courseTime": [
+      [
+        4,
+        6
+      ],
+      [
+        1
+      ],
+      [
+        4
+      ],
+      [
+        2,
+        5,
+        12
+      ],
+      [
+        11
+      ],
+      [
+        4,
+        9,
+        11
+      ],
+      []
+    ],
+    "tags": []
+  },
+  {
+    "name": "Course_94_QAto8",
+    "building": "Building_KM",
+    "room": "190",
+    "teacher": "Teacher_n0AP",
+    "courseTime": [
+      [
+        3,
+        9
+      ],
+      [],
+      [],
+      [
+        3
+      ],
+      [],
+      [
+        1,
+        2,
+        7
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_E8I",
+      "Tag_AeJ",
+      "Tag_2SF"
+    ]
+  },
+  {
+    "name": "Course_95_E4OsW",
+    "building": "Building_es",
+    "room": "389",
+    "teacher": "Teacher_e8bg",
+    "courseTime": [
+      [],
+      [
+        8,
+        12
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        11
+      ],
+      [],
+      [
+        6,
+        7,
+        8
+      ]
+    ],
+    "tags": [
+      "Tag_ZwF",
+      "Tag_qrI",
+      "Tag_BWF"
+    ]
+  },
+  {
+    "name": "Course_96_gtJkP",
+    "building": "Building_P9",
+    "room": "301",
+    "teacher": "Teacher_oq1P",
+    "courseTime": [
+      [
+        1,
+        2,
+        11
+      ],
+      [],
+      [
+        8
+      ],
+      [
+        2,
+        4,
+        9
+      ],
+      [
+        5,
+        6,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        7
+      ]
+    ],
+    "tags": [
+      "Tag_CQA",
+      "Tag_e1x"
+    ]
+  },
+  {
+    "name": "Course_97_S7KXk",
+    "building": "Building_Dr",
+    "room": "977",
+    "teacher": "Teacher_gKMh",
+    "courseTime": [
+      [
+        7,
+        8
+      ],
+      [],
+      [
+        2,
+        4,
+        9
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        1,
+        9
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_gGg",
+      "Tag_eLv",
+      "Tag_vy0",
+      "Tag_Bm5"
+    ]
+  },
+  {
+    "name": "Course_98_ZAoCz",
+    "building": "Building_gX",
+    "room": "472",
+    "teacher": "Teacher_9w8n",
+    "courseTime": [
+      [
+        8,
+        10,
+        12
+      ],
+      [
+        1,
+        12
+      ],
+      [],
+      [
+        3,
+        4,
+        10
+      ],
+      [
+        9
+      ],
+      [],
+      [
+        12
+      ]
+    ],
+    "tags": [
+      "Tag_igR"
+    ]
+  },
+  {
+    "name": "Course_99_E4ylL",
+    "building": "Building_Kt",
+    "room": "903",
+    "teacher": "Teacher_l0lt",
+    "courseTime": [
+      [],
+      [
+        3,
+        11,
+        12
+      ],
+      [],
+      [
+        6,
+        9,
+        11
+      ],
+      [
+        1,
+        11,
+        12
+      ],
+      [
+        3,
+        9,
+        11
+      ],
+      []
+    ],
+    "tags": [
+      "Tag_jzo"
+    ]
+  },
+  {
+    "name": "Course_100_FScM8",
+    "building": "Building_Ey",
+    "room": "243",
+    "teacher": "Teacher_RDhM",
+    "courseTime": [
+      [
+        2,
+        5,
+        8
+      ],
+      [
+        1
+      ],
+      [
+        8
+      ],
+      [
+        4,
+        7,
+        10
+      ],
+      [
+        2,
+        3,
+        4
+      ],
+      [],
+      [
+        5,
+        7,
+        12
+      ]
+    ],
+    "tags": []
+  }
+]

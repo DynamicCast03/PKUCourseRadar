@@ -14,6 +14,7 @@ public:
     QUuid id;
     QString name, building, room, teacher;
     QSet<QString> tags;
+    QVector<QUuid> comments;
     QString note;
     QString description();
     QString tagsString();

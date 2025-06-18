@@ -1,0 +1,73 @@
+{
+    "users": [
+        {
+            "username": "Alice",
+            "passwordmd5": "e10adc3949ba59abbe56e057f20f883e",
+            "uuid": "user_uuid_1",
+            "selected_courses":[
+                {
+                    "day": 3,
+                    "session": 5,
+                    "course_uuid": "course_uuid_1"
+                }
+            ],
+            "marked_courses":[
+                "course_uuid_2"
+            ]
+        }
+    ],
+    "courses": [
+        {
+            "name": "Course_1_1x4Qr",
+            "building": "Building_ji",
+            "room": "600",
+            "teacher": "Teacher_uE0k",
+            "uuid": "course_uuid_1",
+            "note": "这是一个示例课程的备注。",
+            "courseTime": [
+                [],[],[],
+                [5,8],
+                [],[],[]
+            ],
+            "tags": [
+                "Tag_g2F",
+                "Tag_kw8",
+                "Tag_ai0",
+                "Tag_ZyT"
+            ],
+            "comments":[
+                {
+                    "user_uuid": "user_uuid_1",
+                    "course_uuid": "course_uuid_1",
+                    "text": "good course!!!",
+                    "rating": 4.8,
+                    "likes": 30,
+                    "dislikes": 10,
+                    "time": 1718630400
+                }
+            ]
+        },
+        {
+            "name": "Course_2_AbC",
+            "building": "Building_ab",
+            "room": "101",
+            "teacher": "Teacher_xyz",
+            "uuid": "course_uuid_2",
+            "note": "这是另一个示例课程的备注。",
+            "courseTime": [
+                [1,2],
+                [],
+                [3,4],
+                [],
+                [],
+                [],
+                []
+            ],
+            "tags": [
+                "Tag_A",
+                "Tag_B"
+            ],
+            "comments":[]
+        }
+    ]
+} 

@@ -4,21 +4,25 @@
 #include "mycourseswindow.h"
 #include "en_US.h"
 #include "zh_CN.h"
+#include "jsondataaccessor.h"
 
-HomeWindow::HomeWindow(QWidget *parent)
+HomeWindow::HomeWindow(QUuid user_uuid, QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::HomeWindow)
+    , ui(new Ui::HomeWindow), user_uuid(user_uuid)
 {
     ui->setupUi(this);
-    readCourses();
 }
 
 HomeWindow::~HomeWindow()
 {
-    QFile file(config_path);
-    CourseManager::theManager.writeToFile(file);
     delete ui;
 }
+
+void HomeWindow::closeEvent(QCloseEvent* e){
+    JsonDataAccessor::saveManager(user_uuid);
+    QDialog::closeEvent(e);
+}
+
 
 void HomeWindow::readCourses(){
     config_path = QDir(QCoreApplication::applicationDirPath()).filePath("courses.json");

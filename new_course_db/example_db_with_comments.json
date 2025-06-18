@@ -1,0 +1,73 @@
+{
+    "users": [
+        {
+            "username": "Alice",
+            "passwordmd5": "e10adc3949ba59abbe56e057f20f883e",  // 用户的MD5加密密码
+            "uuid": "user_uuid_1",                             // 用户的唯一标识符
+            "selected_courses":[                               // 用户已选课程列表
+                {
+                    "day": 3,                                  // 课程的星期（1-7，表示周一到周日）
+                    "session": 5,                              // 课程的节次（1-12）
+                    "course_uuid": "course_uuid_1"             // 对应课程的唯一标识符
+                }
+            ],
+            "marked_courses":[                                 // 用户收藏的课程列表
+                "course_uuid_2"                                // 对应课程的唯一标识符
+            ]
+        }
+    ],
+    "courses": [
+        {
+            "name": "Course_1_1x4Qr",                           // 课程名称
+            "building": "Building_ji",                         // 课程所在教学楼
+            "room": "600",                                     // 课程所在教室
+            "teacher": "Teacher_uE0k",                         // 授课教师
+            "uuid": "course_uuid_1",                           // 课程的唯一标识符
+            "note": "这是一个示例课程的备注。",                   // 课程备注信息
+            "courseTime": [                                    // 课程时间，一个包含7个数组的数组，每个数组代表一周中的一天，其中包含该天的课程节次
+                [],[],[],                                      // 周一、周二、周三无课
+                [5,8],                                         // 周四第5、8节有课
+                [],[],[]                                       // 周五、周六、周日无课
+            ],
+            "tags": [                                          // 课程标签
+                "Tag_g2F",
+                "Tag_kw8",
+                "Tag_ai0",
+                "Tag_ZyT"
+            ],
+            "comments":[                                       // 课程评论列表
+                {
+                    "user_uuid": "user_uuid_1",                // 评论用户的UUID
+                    "course_uuid": "course_uuid_1",            // 评论课程的UUID
+                    "text": "good course!!!",                  // 评论内容
+                    "rating": 4.8,                             // 评分
+                    "likes": 30,                               // 点赞数
+                    "dislikes": 10,                            // 点踩数
+                    "time": 1718630400                        // 评论时间戳
+                }
+            ]
+        },
+        {
+            "name": "Course_2_AbC",
+            "building": "Building_ab",
+            "room": "101",
+            "teacher": "Teacher_xyz",
+            "uuid": "course_uuid_2",
+            "note": "这是另一个示例课程的备注。",
+            "courseTime": [
+                [1,2],
+                [],
+                [3,4],
+                [],
+                [],
+                [],
+                []
+            ],
+            "tags": [
+                "Tag_A",
+                "Tag_B"
+            ],
+            "comments":[]
+        }
+    ]
+} 
