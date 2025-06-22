@@ -10,7 +10,9 @@ CONFIG += c++17
 
 SOURCES += \
     aboutus.cpp \
+    addcommentwindow.cpp \
     betterbutton.cpp \
+    commentbrowserwindow.cpp \
     course.cpp \
     coursecell.cpp \
     courseinfowindow.cpp \
@@ -29,7 +31,9 @@ SOURCES += \
 
 HEADERS += \
     aboutus.h \
+    addcommentwindow.h \
     betterbutton.h \
+    commentbrowserwindow.h \
     course.h \
     coursecell.h \
     courseinfowindow.h \
@@ -50,6 +54,8 @@ HEADERS += \
 
 FORMS += \
     aboutus.ui \
+    addcommentwindow.ui \
+    commentbrowserwindow.ui \
     courseinfowindow.ui \
     homewindow.ui \
     loginwindow.ui \

@@ -24,6 +24,8 @@ private slots:
     void on_l_list_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
     void on_l_list_itemDoubleClicked(QListWidgetItem *item);
     void onItemRightClicked(const QPoint& pos);
+    void on_btn_view_comment_clicked();
+
 private:
     Ui::CourseInfoWindow *ui;
 signals:

@@ -6,14 +6,17 @@
 
 class CourseComment{
 public:
+    CourseComment();
+    CourseComment(const CourseComment& cc);
+    QString format();
     QUuid commentId;
     QUuid courseId;
     QString comment;
     QUuid commenterId;
     unsigned long long commentTime;
     double rating;
-    int likes;
-    int dislikes;
+    QSet<QUuid> likes; // user uuid
+    QSet<QUuid> dislikes; // user uuid
 };
 
 class CourseManager : public QObject
@@ -25,11 +28,11 @@ public:
     QMap<QUuid, Course> AllCourses;
     QSet<QString> AllTags;
     QMap<QUuid, CourseComment> AllComments;
-    bool readFromFile(QFile& file);
-    bool writeToFile(QFile& file);
     void generateTags();
     QUuid& getSelectedCourse(int day, int session);
     QVector<QVector<QUuid>> selectedCourses;
+    QMap<QUuid, QString> userNames;
+    QUuid currentUserId;
 };
 
 

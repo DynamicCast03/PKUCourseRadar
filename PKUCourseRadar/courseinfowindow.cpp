@@ -1,9 +1,9 @@
 #include "courseinfowindow.h"
 #include "mycourseswindow.h"
-#include "mylike.h"
 #include "radarwindow.h"
 #include "ui_courseinfowindow.h"
 #include "ui_mycourseswindow.h"
+#include "commentbrowserwindow.h"
 
 CourseInfoWindow::CourseInfoWindow(QWidget* parent, QVector<QUuid> courseIds, int day, int session)
     : QDialog(parent)
@@ -26,6 +26,7 @@ CourseInfoWindow::~CourseInfoWindow()
 
 void CourseInfoWindow::sync_list()
 {
+    std::sort(courseIds.begin(), courseIds.end(), [](QUuid a, QUuid b){ return CourseManager::theManager.AllCourses[a].rating() > CourseManager::theManager.AllCourses[b].rating();});
     ui->l_list->clear();
     for (QUuid courseId : courseIds) {
         Course &course = CourseManager::theManager.AllCourses[courseId];
@@ -74,3 +75,11 @@ void CourseInfoWindow::on_l_list_itemDoubleClicked(QListWidgetItem* item)
     sync_list();
     emit changed();
 }
+
+void CourseInfoWindow::on_btn_view_comment_clicked()
+{
+    int row = ui->l_list->row(ui->l_list->currentItem());
+    CommentBrowserWindow *cbw = new CommentBrowserWindow(courseIds[row], this);
+    cbw->exec();
+}
+

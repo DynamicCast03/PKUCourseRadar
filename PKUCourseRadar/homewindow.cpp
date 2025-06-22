@@ -5,6 +5,7 @@
 #include "en_US.h"
 #include "zh_CN.h"
 #include "jsondataaccessor.h"
+#include "loginwindow.h"
 
 HomeWindow::HomeWindow(QUuid user_uuid, QWidget *parent)
     : QDialog(parent)
@@ -21,32 +22,6 @@ HomeWindow::~HomeWindow()
 void HomeWindow::closeEvent(QCloseEvent* e){
     JsonDataAccessor::saveManager(user_uuid);
     QDialog::closeEvent(e);
-}
-
-
-void HomeWindow::readCourses(){
-    config_path = QDir(QCoreApplication::applicationDirPath()).filePath("courses.json");
-    qDebug() << config_path << Qt::endl;
-    QFile file(config_path);
-    if(file.exists()){
-        CourseManager::theManager.readFromFile(file);
-    } else {
-        file.open(QFile::WriteOnly | QFile::Text);
-    }
-}
-
-
-void HomeWindow::on_btn_import_clicked()
-{
-    QString filepath = QFileDialog::getOpenFileName(this, tr("选择包含课程信息的文件"), "", tr("JSON (*.json);;所有文件 (*)"));
-    if(filepath.isEmpty()) return;
-    QFile file(filepath);
-    bool success = CourseManager::theManager.readFromFile(file);
-    if(success){
-        QMessageBox::information(this, tr("导入成功"), tr("已导入课程信息！"));
-    } else {
-        QMessageBox::critical(this, tr("导入失败"), tr("导入失败，请检查Json格式是否符合要求，以及是否存在重复的课程名称。"));
-    }
 }
 
 
@@ -88,5 +63,13 @@ void HomeWindow::on_btn_mylesson_clicked()
 {
     my_like=new MyCoursesWindow(this);
     my_like->exec();
+}
+
+
+void HomeWindow::on_btn_exit_clicked()
+{
+    LoginWindow* w = new LoginWindow();
+    w->show();
+    close();
 }
 

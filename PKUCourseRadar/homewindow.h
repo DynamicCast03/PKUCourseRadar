@@ -19,7 +19,6 @@ class HomeWindow : public QDialog
 
 public:
     HomeWindow(QUuid user_uuid, QWidget *parent = nullptr);
-    void readCourses();
     ~HomeWindow();
     QString config_path;
     RadarWindow *radar_window;
@@ -27,7 +26,6 @@ public:
     QUuid user_uuid;
     void closeEvent(QCloseEvent* e) override;
 private slots:
-    void on_btn_import_clicked();
     void on_btn_start_clicked();
     void on_btn_about_clicked();
 
@@ -36,6 +34,8 @@ private slots:
     void on_radio_chinese_clicked();
 
     void on_btn_mylesson_clicked();
+
+    void on_btn_exit_clicked();
 
 private:
     Ui::HomeWindow *ui;

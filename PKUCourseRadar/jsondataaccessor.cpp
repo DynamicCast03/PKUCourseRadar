@@ -99,6 +99,8 @@ bool JsonDataAccessor::userRegister(const QString& username, const QString& pass
 
 void JsonDataAccessor::initManager(const QUuid& user_id)
 {
+    CourseManager::theManager.currentUserId = user_id;
+
     QJsonDocument doc = readDatabase();
     if (doc.isNull() || !doc.isObject()) return;
 
@@ -137,15 +139,20 @@ void JsonDataAccessor::initManager(const QUuid& user_id)
         for (const QJsonValue& comment_value : json_comments_array) {
             if (!comment_value.isObject()) continue;
             QJsonObject comment_obj = comment_value.toObject();
-
             CourseComment new_comment;
-            new_comment.commentId = QUuid::createUuid();
+            new_comment.commentId = QUuid(comment_obj["comment_uuid"].toString());
             new_comment.courseId = QUuid(comment_obj["course_uuid"].toString());
             new_comment.commenterId = QUuid(comment_obj["user_uuid"].toString());
             new_comment.comment = comment_obj["text"].toString();
             new_comment.rating = comment_obj["rating"].toDouble();
-            new_comment.likes = comment_obj["likes"].toInt();
-            new_comment.dislikes = comment_obj["dislikes"].toInt();
+            QJsonArray likes_array = comment_obj["likes"].toArray();
+            QJsonArray dislikes_array = comment_obj["dislikes"].toArray();
+            for(const QJsonValue& like_value : likes_array) {
+                new_comment.likes.insert(QUuid(like_value.toString()));
+            }
+            for(const QJsonValue& dislike_value : dislikes_array) {
+                new_comment.dislikes.insert(QUuid(dislike_value.toString()));
+            }
             new_comment.commentTime = comment_obj["time"].toString().toULongLong();
 
             CourseManager::theManager.AllComments.insert(new_comment.commentId, new_comment);
@@ -159,7 +166,7 @@ void JsonDataAccessor::initManager(const QUuid& user_id)
     for (const QJsonValue& user_value : users_array) {
         if (!user_value.isObject()) continue;
         QJsonObject user_obj = user_value.toObject();
-
+        CourseManager::theManager.userNames[QUuid(user_obj["uuid"].toString())] = user_obj["username"].toString();
         if (QUuid(user_obj["uuid"].toString()) == user_id) {
             CourseManager::theManager.selectedCourses = QVector<QVector<QUuid>>(7, QVector<QUuid>(12, QUuid()));
             QJsonArray selected_courses_array = user_obj["selected_courses"].toArray();
@@ -184,9 +191,9 @@ void JsonDataAccessor::initManager(const QUuid& user_id)
                     CourseManager::theManager.AllCourses[course_uuid].marked = true;
                 }
             }
-            break;
         }
     }
+
 
     CourseManager::theManager.generateTags();
 }
@@ -269,12 +276,21 @@ void JsonDataAccessor::saveManager(const QUuid& user_id)
             if (CourseManager::theManager.AllComments.contains(comment_uuid)) {
                 const CourseComment& comment = CourseManager::theManager.AllComments[comment_uuid];
                 QJsonObject comment_obj;
+                comment_obj["comment_uuid"] = comment.commentId.toString(QUuid::WithoutBraces);
                 comment_obj["user_uuid"] = comment.commenterId.toString(QUuid::WithoutBraces);
                 comment_obj["course_uuid"] = comment.courseId.toString(QUuid::WithoutBraces);
                 comment_obj["text"] = comment.comment;
                 comment_obj["rating"] = comment.rating;
-                comment_obj["likes"] = comment.likes;
-                comment_obj["dislikes"] = comment.dislikes;
+                QJsonArray likes_json_array;
+                for(const QUuid& like_uuid : comment.likes) {
+                    likes_json_array.append(like_uuid.toString(QUuid::WithoutBraces));
+                }
+                comment_obj["likes"] = likes_json_array;
+                QJsonArray dislikes_json_array;
+                for(const QUuid& dislike_uuid : comment.dislikes) {
+                    dislikes_json_array.append(dislike_uuid.toString(QUuid::WithoutBraces));
+                }
+                comment_obj["dislikes"] = dislikes_json_array;
                 comment_obj["time"] = QString::number(comment.commentTime);
                 comments_json_array.append(comment_obj);
             }

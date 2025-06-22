@@ -41,8 +41,8 @@
                     "course_uuid": "course_uuid_1",
                     "text": "good course!!!",
                     "rating": 4.8,
-                    "likes": 30,
-                    "dislikes": 10,
+                    "likes": [],
+                    "dislikes": [],
                     "time": 1718630400
                 }
             ]

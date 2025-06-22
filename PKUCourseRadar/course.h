@@ -10,6 +10,7 @@ public:
     Course();
     Course(const Course& c);
     Course& operator=(const Course& c);
+    double rating();
     CourseTime ct;
     QUuid id;
     QString name, building, room, teacher;
