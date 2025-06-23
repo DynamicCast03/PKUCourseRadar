@@ -86,7 +86,10 @@ void CourseInfoWindow::on_l_list_itemDoubleClicked(QListWidgetItem* item)
 void CourseInfoWindow::on_btn_view_comment_clicked()
 {
     int row = ui->l_list->row(ui->l_list->currentItem());
+    if (row < 0);
+    else{
     CommentBrowserWindow *cbw = new CommentBrowserWindow(courseIds[row], this);
     cbw->exec();
+    }
 }
 

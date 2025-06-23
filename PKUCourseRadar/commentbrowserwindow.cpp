@@ -24,10 +24,11 @@ void CommentBrowserWindow::sync_list(){
     commentIds.clear();
     for(QUuid commentId : CourseManager::theManager.AllCourses[courseId].comments){
         commentIds.push_back(commentId);
-        ui->lw_all_comments->addItem(new QListWidgetItem(CourseManager::theManager.AllComments[commentId].comment.replace("\n", "")));
     }
-    std::sort(commentIds.begin(), commentIds.end(), [](QUuid a, QUuid b){ return CourseManager::theManager.AllComments[a].likes.size() - CourseManager::theManager.AllComments[a].dislikes.size() >
-        CourseManager::theManager.AllComments[b].likes.size() - CourseManager::theManager.AllComments[b].dislikes.size(); });
+    std::sort(commentIds.begin(), commentIds.end(), [](QUuid a, QUuid b){if(CourseManager::theManager.AllComments[a].likes.size() - CourseManager::theManager.AllComments[a].dislikes.size() != CourseManager::theManager.AllComments[b].likes.size() - CourseManager::theManager.AllComments[b].dislikes.size()) return CourseManager::theManager.AllComments[a].likes.size() - CourseManager::theManager.AllComments[a].dislikes.size() >
+            CourseManager::theManager.AllComments[b].likes.size() - CourseManager::theManager.AllComments[b].dislikes.size(); return CourseManager::theManager.AllComments[a].commentId > CourseManager::theManager.AllComments[b].commentId; });
+    for(QUuid commentId : commentIds)
+    ui->lw_all_comments->addItem(new QListWidgetItem(CourseManager::theManager.AllComments[commentId].comment.replace("\n", "")));
 }
 
 
@@ -77,7 +78,7 @@ void CommentBrowserWindow::on_btn_down_clicked()
 void CommentBrowserWindow::on_btn_write_comment_clicked()
 {
     AddCommentWindow* w = new AddCommentWindow(courseId, this);
-    // connect(w, &AddCommentWindow::updatecomment, this, &CommentBrowserWindow::sync_list);
+    connect(w, &AddCommentWindow::updatecomment, this, &CommentBrowserWindow::sync_list);
     w -> exec();
     sync_list();
 }
