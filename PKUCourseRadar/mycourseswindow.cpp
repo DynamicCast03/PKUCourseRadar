@@ -8,6 +8,7 @@ MyCoursesWindow::MyCoursesWindow(QWidget* parent)
 {
     ui->setupUi(this);
     connect(ui->Table, &CourseTableWidget::cellClicked, this, &MyCoursesWindow::cellclicked);
+    ui -> Table -> setCanDisable(false);
     syncCells();
 }
 

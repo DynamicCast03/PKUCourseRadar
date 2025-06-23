@@ -10,6 +10,7 @@ RadarWindow::RadarWindow(QWidget *parent)
     nowDisabled = QVector<QVector<int>>(7, QVector<int>(12, 0));
     nowReadyTags = CourseManager::theManager.AllTags;
     nowSelectedTags = QSet<QString>();
+    ui -> Table -> setCanDisable(true);
     connect(ui -> Table, &CourseTableWidget::cellClicked, this, &RadarWindow::cellClicked);
     connect(ui -> Table, &CourseTableWidget::cellRightClicked, this, &RadarWindow::cellRightClicked);
     showTags();

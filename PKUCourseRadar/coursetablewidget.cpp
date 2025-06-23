@@ -60,3 +60,12 @@ void CourseTableWidget::refreshAllCells(){
 CourseCell* CourseTableWidget::getCell(int day, int session){
     return cells[day - 1][session - 1];
 }
+
+void CourseTableWidget::setCanDisable(bool canDisable){
+    for(int i = 1; i <= 12; i++){
+        for(int j = 1; j <= 7; j++){
+            cells[j - 1][i - 1] -> canDisable = canDisable;
+        }
+    }
+}
+

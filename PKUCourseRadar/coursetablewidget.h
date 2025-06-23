@@ -13,6 +13,7 @@ public:
     QVector<QVector<CourseCell*>> cells; // 两个下标都从1开始, 0行0列是表头
     void refreshAllCells();
     CourseCell* getCell(int day, int session);
+    void setCanDisable(bool canDisable);
 signals:
     void cellClicked(int x, int y); // x:[1, 7], y:[1, 12]
     void cellRightClicked(int x, int y, bool disabled); // x:[1, 7], y:[1, 12]
