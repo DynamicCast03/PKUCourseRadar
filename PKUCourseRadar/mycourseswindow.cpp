@@ -46,7 +46,7 @@ void MyCoursesWindow::cellclicked(int x, int y)
         }
     }
     CourseInfoWindow* window = new CourseInfoWindow(this, markedCourses, x, y);
-    // connect(window, &CourseInfoWindow::changed, this, &MyCoursesWindow::syncCells);
+    connect(window, &CourseInfoWindow::changed, this, &MyCoursesWindow::syncCells);
     window->show();
     syncCells();
 }

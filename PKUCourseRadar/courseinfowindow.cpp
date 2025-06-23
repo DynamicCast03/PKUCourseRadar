@@ -26,7 +26,7 @@ CourseInfoWindow::~CourseInfoWindow()
 
 void CourseInfoWindow::sync_list()
 {
-    std::sort(courseIds.begin(), courseIds.end(), [](QUuid a, QUuid b){ return CourseManager::theManager.AllCourses[a].rating() > CourseManager::theManager.AllCourses[b].rating();});
+    std::sort(courseIds.begin(), courseIds.end(), [](QUuid a, QUuid b){if(CourseManager::theManager.AllCourses[a].rating() == CourseManager::theManager.AllCourses[b].rating())return CourseManager::theManager.AllCourses[a].id > CourseManager::theManager.AllCourses[b].id; return CourseManager::theManager.AllCourses[a].rating() > CourseManager::theManager.AllCourses[b].rating();});
     ui->l_list->clear();
     for (QUuid courseId : courseIds) {
         Course &course = CourseManager::theManager.AllCourses[courseId];
@@ -54,8 +54,15 @@ void CourseInfoWindow::onItemRightClicked(const QPoint& pos)
     int row = ui->l_list->row(item);
     Course &course = CourseManager::theManager.AllCourses[courseIds[row]];
     course.marked = !course.marked;
-    if(!course.marked && CourseManager::theManager.getSelectedCourse(day, session) == course.id)
-        CourseManager::theManager.getSelectedCourse(day, session) = QUuid(); // 空 uuid, 全 0
+    if (!course.marked){
+        for (int i=1;i<=7;i++){
+            for (int j=1;j<=12;j++){
+                if(CourseManager::theManager.getSelectedCourse(i, j) == course.id){
+                    CourseManager::theManager.getSelectedCourse(i, j) = QUuid();
+                }
+            }
+        }
+    }
     sync_list();
     emit changed();
 }
