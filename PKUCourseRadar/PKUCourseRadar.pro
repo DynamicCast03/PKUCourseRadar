@@ -12,6 +12,7 @@ SOURCES += \
     aboutus.cpp \
     addcommentwindow.cpp \
     betterbutton.cpp \
+    bettermessagebox.cpp \
     commentbrowserwindow.cpp \
     course.cpp \
     coursecell.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     aboutus.h \
     addcommentwindow.h \
     betterbutton.h \
+    bettermessagebox.h \
     commentbrowserwindow.h \
     course.h \
     coursecell.h \

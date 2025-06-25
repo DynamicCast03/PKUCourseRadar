@@ -13,13 +13,16 @@
   <property name="windowTitle">
    <string>查找课程</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(250,250,250);</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,2">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>过滤课程</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;过滤课程&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -33,7 +36,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="i_name"/>
+        <widget class="QLineEdit" name="i_name">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -47,7 +54,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="i_teacher"/>
+        <widget class="QLineEdit" name="i_teacher">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -61,7 +72,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="i_building"/>
+        <widget class="QLineEdit" name="i_building">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -75,7 +90,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="i_room"/>
+        <widget class="QLineEdit" name="i_room">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -89,14 +108,22 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="i_tags"/>
+        <widget class="QLineEdit" name="i_tags">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="6,1,6">
        <item>
-        <widget class="QListWidget" name="l_all_tags"/>
+        <widget class="QListWidget" name="l_all_tags">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_7">
@@ -106,7 +133,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QListWidget" name="l_selected_tags"/>
+        <widget class="QListWidget" name="l_selected_tags">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>

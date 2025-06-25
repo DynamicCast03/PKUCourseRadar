@@ -13,18 +13,32 @@
   <property name="windowTitle">
    <string>课程详情</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(250,250,250);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,5">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="4,1">
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,1">
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
         <string>课程详情</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_view_comment">
+      <widget class="BetterButton" name="btn_view_comment">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>查看评价</string>
        </property>
@@ -35,15 +49,30 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,2">
      <item>
-      <widget class="QListWidget" name="l_list"/>
+      <widget class="QListWidget" name="l_list">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255,255,255);</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QTextBrowser" name="b_info"/>
+      <widget class="QTextBrowser" name="b_info">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255,255,255);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BetterButton</class>
+   <extends>QPushButton</extends>
+   <header>betterbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

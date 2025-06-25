@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>关于我们</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,2,3,2">
    <item>
     <spacer name="verticalSpacer_2">

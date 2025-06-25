@@ -3,12 +3,15 @@
 #include "debug_utils.h"
 #include "mycourseswindow.h"
 #include "loginwindow.h"
+#include "testwindow.h"
+#include "bettermessagebox.h"
 int main(int argc, char *argv[])
 {
     QIcon::setThemeName("breeze");
     QApplication a(argc, argv);
     LoginWindow w;
     w.show();
+    // BetterMessageBox::info(nullptr, "hey", "bruhhhhhhhhh");
 
     return a.exec();
 }

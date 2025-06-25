@@ -13,34 +13,54 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(250,250,250);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,0,0,1">
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
         <string>课程评论-</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_up">
+      <widget class="BetterButton" name="btn_up">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>👍</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_down">
+      <widget class="BetterButton" name="btn_down">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>👎</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_write_comment">
+      <widget class="BetterButton" name="btn_write_comment">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+        <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -55,15 +75,30 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2">
      <item>
-      <widget class="QListWidget" name="lw_all_comments"/>
+      <widget class="QListWidget" name="lw_all_comments">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255,255,255);</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QTextBrowser" name="tb_comment_content"/>
+      <widget class="QTextBrowser" name="tb_comment_content">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255,255,255);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BetterButton</class>
+   <extends>QPushButton</extends>
+   <header>betterbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

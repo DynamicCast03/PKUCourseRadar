@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>我的课程</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(250,250,250);</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="CourseTableWidget" name="Table" native="true"/>

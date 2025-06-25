@@ -2,17 +2,16 @@
 
 CourseCell::CourseCell(QWidget *parent, const QString& displayText)
     : QWidget{parent},textLabel(new QLabel()),layout(new QVBoxLayout()),
-      baseColor(QColor(230, 230, 230)),
-      hoverColor(QColor(200, 200, 200)),
-      pressedColor(QColor(150, 150, 150)),
-      disabledColor(QColor(100, 100, 100)),
+      baseColor(QColor(245, 245, 245, 100)),
+      hoverColor(QColor(230, 230, 230)),
+      pressedColor(QColor(200, 200, 200)),
+      disabledColor(QColor(150, 150, 150)),
       currentColor(baseColor),
       colorAnimation(new QVariantAnimation(this))
 {
     layout->addWidget(textLabel);
     this->textLabel->setAlignment(Qt::AlignCenter);
     this->textLabel->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
-    textLabel -> setStyleSheet("color: black;");
     setLayout(layout);
     connect(colorAnimation, &QVariantAnimation::valueChanged, this, &CourseCell::onAnimationValueChanged);
     colorAnimation->setDuration(500);
@@ -70,8 +69,9 @@ void CourseCell::mouseReleaseEvent(QMouseEvent* e){
 
 void CourseCell::paintEvent(QPaintEvent* e){
     QPainter painter(this);
+    textLabel->setStyleSheet("background: none;");
     painter.fillRect(1, 1, width() - 2, height() - 2, currentColor);
-    painter.setPen(QPen(QColor(100, 100, 100), 1));
+    painter.setPen(QPen(QColor(200, 200, 200), 1));
     painter.drawRect(1, 1, width() - 2, height() - 2);
     QWidget::paintEvent(e);
 }

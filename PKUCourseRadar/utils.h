@@ -20,6 +20,7 @@
 #include <QtGui>
 #include <QListWidgetItem>
 #include <QUuid>
+#include <QPushButton>
 #include <QFontMetrics>
 
 class Utils{
