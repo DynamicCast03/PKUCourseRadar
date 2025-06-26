@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>344</width>
+    <width>452</width>
     <height>240</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Songti SC</family>
+       <family>宋体</family>
        <bold>true</bold>
       </font>
      </property>
