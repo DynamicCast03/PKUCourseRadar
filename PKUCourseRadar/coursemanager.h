@@ -35,6 +35,7 @@ public:
     QVector<QVector<QUuid>> selectedCourses;
     QMap<QUuid, QString> userNames;
     QUuid currentUserId;
+    int curLanguage; // 0-中文
 };
 
 

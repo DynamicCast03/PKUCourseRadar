@@ -24,7 +24,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="50,600">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="4,0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="4">
      <item>
       <widget class="QLabel" name="lbl_title">
        <property name="sizePolicy">
@@ -52,40 +52,6 @@
         <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QRadioButton" name="radio_chinese">
-         <property name="text">
-          <string>简体中文</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="radio_english">
-         <property name="text">
-          <string>English</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>

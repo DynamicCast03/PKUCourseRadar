@@ -8,12 +8,20 @@
 #include <QFileDialog>
 #include <QFile>
 #include <QCoreApplication>
+#include "en_US.h"
+#include "zh_CN.h"
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
+    if(CourseManager::theManager.curLanguage){
+        ui->language->setText("🌏English");
+
+    } else {
+        ui->language->setText("🌏简体中文");
+    }
 }
 
 LoginWindow::~LoginWindow()
@@ -126,3 +134,27 @@ void LoginWindow::on_btn_export_clicked()
     destination_file.close();
     BetterMessageBox::info(this, tr("导出成功"), tr("数据库已成功导出。"));
 }
+
+void LoginWindow::on_language_clicked()
+{
+    CourseManager::theManager.curLanguage ^= 1;
+    if(CourseManager::theManager.curLanguage){
+        QTranslator* translator = new QTranslator();
+        if (translator->load(PKUCourseRadar_en_US_qm, PKUCourseRadar_en_US_qm_len)) {
+            QCoreApplication::installTranslator(translator);
+        }
+        ui->retranslateUi(this);
+        ui->language->setText("🌏English");
+
+    } else {
+        QTranslator* translator = new QTranslator();
+        if (translator->load(PKUCourseRadar_zh_CN_qm, PKUCourseRadar_zh_CN_qm_len)) {
+            QCoreApplication::installTranslator(translator);
+        }
+        ui->retranslateUi(this);
+        ui->language->setText("🌏简体中文");
+
+    }
+
+}
+
