@@ -38,6 +38,18 @@ CourseComment::CourseComment(const CourseComment& cc){
     dislikes = cc.dislikes;
 }
 
+CourseComment& CourseComment::operator=(const CourseComment& cc){
+    commentId = cc.commentId;
+    courseId = cc.courseId;
+    comment = cc.comment;
+    commenterId = cc.commenterId;
+    commentTime = cc.commentTime;
+    rating = cc.rating;
+    likes = cc.likes;
+    dislikes = cc.dislikes;
+}
+
+
 QString CourseComment::format(){
-    return QString("评论者: %1\n时间: %2\n评分: %3\n------------------------------\n%4").arg(CourseManager::theManager.userNames[commenterId]).arg(QDateTime::fromSecsSinceEpoch(commentTime).toString("yyyy-MM-dd hh:mm:ss")).arg(rating, 0, 'f', 1).arg(comment);
+    return tr("评论者: %1\n时间: %2\n评分: %3\n------------------------------\n%4").arg(CourseManager::theManager.userNames[commenterId]).arg(QDateTime::fromSecsSinceEpoch(commentTime).toString("yyyy-MM-dd hh:mm:ss")).arg(rating, 0, 'f', 1).arg(comment);
 }

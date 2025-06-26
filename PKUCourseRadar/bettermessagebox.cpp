@@ -37,7 +37,7 @@ void BetterMessageBox::info(QWidget *parent, const QString &title, const QString
 
 
     BetterButton *btn = new BetterButton(&dlg);
-    btn->setText("确定");
+    btn->setText(tr("确定"));
     // btn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
     btn->setFixedSize(100, 50);
     QObject::connect(btn, &QPushButton::clicked, &dlg, &QDialog::accept);

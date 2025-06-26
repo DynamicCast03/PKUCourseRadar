@@ -8,7 +8,7 @@ AddCommentWindow::AddCommentWindow(QUuid courseId, QWidget *parent)
     , courseId(courseId)
 {
     ui->setupUi(this);
-    ui->label->setText(QString::asprintf("为课程 %s 撰写评价", CourseManager::theManager.AllCourses[courseId].name.toStdString().c_str()));
+    ui->label->setText(tr("为课程 %1 撰写评价").arg(QString::fromStdString(CourseManager::theManager.AllCourses[courseId].name.toStdString())));
     on_sl_rating_valueChanged(ui->sl_rating->value());
 }
 

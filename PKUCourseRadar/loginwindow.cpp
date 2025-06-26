@@ -27,12 +27,12 @@ void LoginWindow::on_btn_reg_or_login_clicked()
     QString password = ui->le_pwd->text();
 
     if (username.isEmpty() || password.isEmpty()) {
-        BetterMessageBox::info(this, "登录/注册", "用户名或密码不能为空。");
+        BetterMessageBox::info(this, tr("登录/注册"), tr("用户名或密码不能为空。"));
         return;
     }
     QString user_uuid_str = JsonDataAccessor::userLogin(username, password);
     if (!user_uuid_str.isEmpty()) {
-        BetterMessageBox::info(this, "登录成功", "登录成功！");
+        BetterMessageBox::info(this, tr("登录成功"), tr("登录成功！"));
         QUuid user_uuid = QUuid(user_uuid_str);
         JsonDataAccessor::initManager(user_uuid);
         HomeWindow* home_window = new HomeWindow(user_uuid);
@@ -41,7 +41,7 @@ void LoginWindow::on_btn_reg_or_login_clicked()
     } else {
         bool registered = JsonDataAccessor::userRegister(username, password);
         if (registered) {
-            BetterMessageBox::info(this, "注册成功", "用户注册成功！");
+            BetterMessageBox::info(this, tr("注册成功"), tr("用户注册成功！"));
             user_uuid_str = JsonDataAccessor::userLogin(username, password);
             if (!user_uuid_str.isEmpty()) {
                 QUuid user_uuid = QUuid(user_uuid_str);
@@ -50,24 +50,24 @@ void LoginWindow::on_btn_reg_or_login_clicked()
                 home_window->show();
                 this->close();
             } else {
-                BetterMessageBox::info(this, "错误", "注册成功但登录失败，请联系管理员。");
+                BetterMessageBox::info(this, tr("错误"), tr("注册成功但登录失败，请联系管理员。"));
             }
         } else {
-            BetterMessageBox::info(this, "登录失败", "用户名或密码错误。");
+            BetterMessageBox::info(this, tr("登录失败"), tr("用户名或密码错误。"));
         }
     }
 }
 
 void LoginWindow::on_btn_import_clicked()
 {
-    QString file_path = QFileDialog::getOpenFileName(this, "选择数据库文件", "", "JSON Files (*.json)");
+    QString file_path = QFileDialog::getOpenFileName(this, tr("选择数据库文件"), "", tr("JSON Files (*.json)"));
     if (file_path.isEmpty()) {
         return;
     }
 
     QFile source_file(file_path);
     if (!source_file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        BetterMessageBox::info(this, "导入失败", "无法打开源文件进行读取。");
+        BetterMessageBox::info(this, tr("导入失败"), tr("无法打开源文件进行读取。"));
         return;
     }
 
@@ -78,18 +78,18 @@ void LoginWindow::on_btn_import_clicked()
     QFile destination_file(database_file_path);
 
     if (!destination_file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
-        BetterMessageBox::info(this, "导入失败", "无法打开目标数据库文件进行写入。");
+        BetterMessageBox::info(this, tr("导入失败"), tr("无法打开目标数据库文件进行写入。"));
         return;
     }
 
     if (destination_file.write(file_content) == -1) {
-        BetterMessageBox::info(this, "导入失败", "写入数据库文件失败。");
+        BetterMessageBox::info(this, tr("导入失败"), tr("写入数据库文件失败。"));
         destination_file.close();
         return;
     }
 
     destination_file.close();
-    BetterMessageBox::info(this, "导入成功", "数据库已成功导入并覆盖。");
+    BetterMessageBox::info(this, tr("导入成功"), tr("数据库已成功导入并覆盖。"));
 }
 
 void LoginWindow::on_btn_export_clicked()
@@ -98,11 +98,11 @@ void LoginWindow::on_btn_export_clicked()
     QFile source_file(database_file_path);
 
     if (!source_file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        BetterMessageBox::info(this, "导出失败", "无法打开源数据库文件进行读取。");
+        BetterMessageBox::info(this, tr("导出失败"), tr("无法打开源数据库文件进行读取。"));
         return;
     }
 
-    QString file_path = QFileDialog::getSaveFileName(this, "保存数据库文件", "", "JSON Files (*.json)");
+    QString file_path = QFileDialog::getSaveFileName(this, tr("保存数据库文件"), "", tr("JSON Files (*.json)"));
     if (file_path.isEmpty()) {
         source_file.close();
         return;
@@ -113,17 +113,16 @@ void LoginWindow::on_btn_export_clicked()
 
     QFile destination_file(file_path);
     if (!destination_file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
-        BetterMessageBox::info(this, "导出失败", "无法打开目标文件进行写入。");
+        BetterMessageBox::info(this, tr("导出失败"), tr("无法打开目标文件进行写入。"));
         return;
     }
 
     if (destination_file.write(file_content) == -1) {
-        BetterMessageBox::info(this, "导出失败", "写入文件失败。");
+        BetterMessageBox::info(this, tr("导出失败"), tr("写入文件失败。"));
         destination_file.close();
         return;
     }
 
     destination_file.close();
-    BetterMessageBox::info(this, "导出成功", "数据库已成功导出。");
+    BetterMessageBox::info(this, tr("导出成功"), tr("数据库已成功导出。"));
 }
-

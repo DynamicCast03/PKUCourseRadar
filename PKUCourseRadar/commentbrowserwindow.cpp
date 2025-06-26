@@ -9,7 +9,7 @@ CommentBrowserWindow::CommentBrowserWindow(QUuid courseId, QWidget *parent)
     , courseId(courseId)
 {
     ui->setupUi(this);
-    ui->label->setText(QString("课程评价 - ") + CourseManager::theManager.AllCourses[courseId].name);
+    ui->label->setText(tr("课程评价 - ") + CourseManager::theManager.AllCourses[courseId].name);
     sync_list();
     showing_row = -1;
 }

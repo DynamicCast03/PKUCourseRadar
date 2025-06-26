@@ -4,10 +4,12 @@
 #include "utils.h"
 #include "course.h"
 
-class CourseComment{
+class CourseComment : public QObject{
+    Q_OBJECT
 public:
     CourseComment();
     CourseComment(const CourseComment& cc);
+    CourseComment& operator=(const CourseComment& cc);
     QString format();
     QUuid commentId;
     QUuid courseId;
