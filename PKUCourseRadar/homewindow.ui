@@ -35,14 +35,21 @@
        </property>
        <property name="font">
         <font>
+         <pointsize>28</pointsize>
          <bold>true</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: #94070a;</string>
+       </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; color:#94070a;&quot;&gt;PKUers的课程旁听推荐系统&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>PKUers的课程旁听推荐系统</string>
        </property>
        <property name="textFormat">
         <enum>Qt::TextFormat::AutoText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>
