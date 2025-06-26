@@ -8,7 +8,7 @@ BetterButton::BetterButton(QWidget *parent)
 {
     setMouseTracking(true);
     color_bg = QColor(255, 255, 255, 255);
-    corner_radius = qMin(width(), height()) * 0.3;
+    corner_radius = qMin(width(), height()) * 0.5;
     content_padding = 5;
 
     color_grad_start_default = QColor(255, 255, 255, 255);

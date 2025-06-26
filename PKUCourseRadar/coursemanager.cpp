@@ -47,6 +47,7 @@ CourseComment& CourseComment::operator=(const CourseComment& cc){
     rating = cc.rating;
     likes = cc.likes;
     dislikes = cc.dislikes;
+    return *this;
 }
 
 

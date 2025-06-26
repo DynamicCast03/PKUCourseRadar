@@ -4,5 +4,6 @@
     </qresource>
     <qresource prefix="/icon">
         <file>radar.png</file>
+        <file>arrow.svg</file>
     </qresource>
 </RCC>

@@ -11,25 +11,21 @@ void BetterMessageBox::info(QWidget *parent, const QString &title, const QString
     QHBoxLayout *topLayout = new QHBoxLayout();
 
     QSize iconSize(32, 32);
-    // 图标
     QLabel *icon = new QLabel(&dlg);
     QIcon ico = QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation);
     icon->setFixedSize(iconSize);
     icon->setPixmap(ico.pixmap(iconSize));
     icon->setAlignment(Qt::AlignCenter);
-    // 文本
     QLabel *lbl = new QLabel(text, &dlg);
     lbl->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    // 字体可以适当加大提升视觉效果
     QFont f = lbl->font();
-    f.setPointSize(18);
+    f.setPointSize(12);
     lbl->setFont(f);
-    // 多行显示
     lbl->setWordWrap(true);
 
     topLayout->addWidget(icon, 1);
     topLayout->addSpacing(30);
-    topLayout->addWidget(lbl, 3);
+    topLayout->addWidget(lbl, 5);
 
     mainLayout->addLayout(topLayout, 3);
 
