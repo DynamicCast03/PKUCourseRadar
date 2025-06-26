@@ -135,12 +135,27 @@
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255,255,255);</string>
          </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="verticalScrollMode">
+          <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+         </property>
+         <property name="horizontalScrollMode">
+          <enum>QAbstractItemView::ScrollMode::ScrollPerItem</enum>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>-&gt;</string>
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="picture.qrc">:/icon/arrow.svg</pixmap>
          </property>
         </widget>
        </item>
@@ -148,6 +163,12 @@
         <widget class="QListWidget" name="l_selected_tags">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255,255,255);</string>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
          </property>
         </widget>
        </item>
@@ -168,6 +189,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="picture.qrc"/>
+ </resources>
  <connections/>
 </ui>

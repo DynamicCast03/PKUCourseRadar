@@ -21,7 +21,6 @@ SOURCES += \
     coursetablewidget.cpp \
     coursetime.cpp \
     dataaccessor.cpp \
-    debug_utils.cpp \
     jsondataaccessor.cpp \
     loginwindow.cpp \
     main.cpp \
@@ -43,7 +42,6 @@ HEADERS += \
     coursetablewidget.h \
     coursetime.h \
     dataaccessor.h \
-    debug_utils.h \
     en_US.h \
     homewindow.h \
     jsondataaccessor.h \
