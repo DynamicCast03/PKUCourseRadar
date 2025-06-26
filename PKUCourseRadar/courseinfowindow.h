@@ -20,6 +20,7 @@ public:
     QVector<QUuid> courseIds;
     void sync_list();
     int day, session;
+    int lastRow;
 private slots:
     void on_l_list_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
     void on_l_list_itemDoubleClicked(QListWidgetItem *item);

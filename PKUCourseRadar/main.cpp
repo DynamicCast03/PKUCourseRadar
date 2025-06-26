@@ -3,7 +3,6 @@
 #include "debug_utils.h"
 #include "mycourseswindow.h"
 #include "loginwindow.h"
-#include "testwindow.h"
 #include "bettermessagebox.h"
 int main(int argc, char *argv[])
 {

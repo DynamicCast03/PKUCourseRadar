@@ -13,6 +13,7 @@ CourseInfoWindow::CourseInfoWindow(QWidget* parent, QVector<QUuid> courseIds, in
     , session(session)
 {
     ui->setupUi(this);
+    lastRow = -1;
     // courses 是 QListWidget 的镜像, 需要保证二者一致, 因此修改 courses 时需要同步到 QListWidget, 调用 sync_list() 函数
     sync_list();
     ui->l_list->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -43,6 +44,7 @@ void CourseInfoWindow::on_l_list_currentItemChanged(QListWidgetItem* current, QL
 {
     if(!current) return;
     int row = ui->l_list->row(current);
+    lastRow = row;
     ui->b_info->setText(CourseManager::theManager.AllCourses[courseIds[row]].description());
     emit changed();
 }
@@ -88,6 +90,9 @@ void CourseInfoWindow::on_btn_view_comment_clicked()
     int row = ui->l_list->row(ui->l_list->currentItem());
     if(row >= 0){
         CommentBrowserWindow *cbw = new CommentBrowserWindow(courseIds[row], this);
+        cbw->exec();
+    } else if(lastRow >= 0){
+        CommentBrowserWindow *cbw = new CommentBrowserWindow(courseIds[lastRow], this);
         cbw->exec();
     }
 }
