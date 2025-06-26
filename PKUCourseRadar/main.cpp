@@ -1,6 +1,5 @@
 #include "homewindow.h"
 #include "coursemanager.h"
-#include "debug_utils.h"
 #include "mycourseswindow.h"
 #include "loginwindow.h"
 #include "bettermessagebox.h"

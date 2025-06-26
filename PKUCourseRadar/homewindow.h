@@ -3,7 +3,6 @@
 
 #include "utils.h"
 #include "coursemanager.h"
-#include "debug_utils.h"
 #include "radarwindow.h"
 #include "mycourseswindow.h"
 
