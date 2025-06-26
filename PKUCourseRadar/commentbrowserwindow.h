@@ -17,6 +17,7 @@ public:
     QUuid courseId;
     QVector<QUuid> commentIds; // 依旧采用列表和QVector同步的架构
     void sync_list();
+    int showing_row;
 private slots:
     void on_btn_up_clicked();
     void on_btn_down_clicked();

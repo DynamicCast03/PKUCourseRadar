@@ -76,6 +76,5 @@ TRANSLATIONS += \
 RESOURCES += \
     picture.qrc
 
-CONFIG += precompile_header
-PRECOMPILED_HEADER = utils.h
-QMAKE_CXXFLAGS += /MP
+RC_FILE += \
+    app.rc

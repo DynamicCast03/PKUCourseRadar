@@ -23,6 +23,7 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
+         <family>.AppleSystemUIFont</family>
          <bold>true</bold>
         </font>
        </property>

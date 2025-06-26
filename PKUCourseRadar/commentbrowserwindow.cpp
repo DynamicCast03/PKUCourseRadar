@@ -11,7 +11,7 @@ CommentBrowserWindow::CommentBrowserWindow(QUuid courseId, QWidget *parent)
     ui->setupUi(this);
     ui->label->setText(QString("课程评价 - ") + CourseManager::theManager.AllCourses[courseId].name);
     sync_list();
-
+    showing_row = -1;
 }
 
 CommentBrowserWindow::~CommentBrowserWindow()
@@ -39,11 +39,12 @@ void CommentBrowserWindow::on_lw_all_comments_currentItemChanged(QListWidgetItem
     ui->tb_comment_content->setText(CourseManager::theManager.AllComments[commentIds[row]].format());
     ui->btn_up->setText(QString("👍") + QString::number(CourseManager::theManager.AllComments[commentIds[row]].likes.size()));
     ui->btn_down->setText(QString("👎") + QString::number(CourseManager::theManager.AllComments[commentIds[row]].dislikes.size()));
+    showing_row = row;
 }
 
 void CommentBrowserWindow::on_btn_up_clicked()
 {
-    int row = ui->lw_all_comments->currentRow();
+    int row = showing_row;
     if(row == -1) return;
     QUuid commentId = commentIds[row];
     if(CourseManager::theManager.AllComments[commentId].likes.contains(CourseManager::theManager.currentUserId)){
@@ -60,7 +61,7 @@ void CommentBrowserWindow::on_btn_up_clicked()
 
 void CommentBrowserWindow::on_btn_down_clicked()
 {
-    int row = ui->lw_all_comments->currentRow();
+    int row = showing_row;
     if(row == -1) return;
     QUuid commentId = commentIds[row];
     if(CourseManager::theManager.AllComments[commentId].dislikes.contains(CourseManager::theManager.currentUserId)){

@@ -2,4 +2,7 @@
     <qresource prefix="/homewindow">
         <file>pic.png</file>
     </qresource>
+    <qresource prefix="/icon">
+        <file>radar.png</file>
+    </qresource>
 </RCC>

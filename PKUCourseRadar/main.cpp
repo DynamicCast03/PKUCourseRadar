@@ -10,7 +10,5 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     LoginWindow w;
     w.show();
-    // BetterMessageBox::info(nullptr, "hey", "bruhhhhhhhhh");
-
     return a.exec();
 }
