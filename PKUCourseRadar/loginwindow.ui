@@ -16,9 +16,15 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(250,250,250);</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="5,7,7,2,7">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="5,1,7,7,2,7">
    <item>
     <widget class="QLabel" name="lbl_title">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="font">
       <font>
        <pointsize>13</pointsize>
@@ -32,6 +38,19 @@
       <enum>Qt::TextFormat::AutoText</enum>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,8">
