@@ -12,18 +12,18 @@
 #include <QSet>
 #include <QUuid>
 
-class JsonDataAccessor
+class JsonDataAccessor : public DataAccessor
 {
 public:
-    static QString userLogin(const QString& username, const QString& password);
-    static bool userRegister(const QString& username, const QString& password);
-    static void initManager(const QUuid& user_id);
-    static void saveManager(const QUuid& user_id);
+    QString userLogin(const QString& username, const QString& password);
+    bool userRegister(const QString& username, const QString& password);
+    void initManager(const QUuid& user_id);
+    void saveManager(const QUuid& user_id);
 
 private:
-    static QJsonDocument readDatabase();
-    static bool writeDatabase(const QJsonDocument& doc);
-    static const QString database_file_path_;
+    QJsonDocument readDatabase();
+    bool writeDatabase(const QJsonDocument& doc);
+    const QString database_file_path_;
 };
 
 #endif // JSONDATAACCESSOR_H 

@@ -18,7 +18,7 @@ HomeWindow::~HomeWindow()
 }
 
 void HomeWindow::closeEvent(QCloseEvent* e){
-    JsonDataAccessor::saveManager(user_uuid);
+    DataAccessor::theDataAccessor->saveManager(user_uuid);
     QDialog::closeEvent(e);
 }
 

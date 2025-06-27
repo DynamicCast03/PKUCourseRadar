@@ -38,22 +38,22 @@ void LoginWindow::on_btn_reg_or_login_clicked()
         BetterMessageBox::info(this, tr("登录/注册"), tr("用户名或密码不能为空。"));
         return;
     }
-    QString user_uuid_str = JsonDataAccessor::userLogin(username, password);
+    QString user_uuid_str = DataAccessor::theDataAccessor->userLogin(username, password);
     if (!user_uuid_str.isEmpty()) {
         BetterMessageBox::info(this, tr("登录成功"), tr("登录成功！"));
         QUuid user_uuid = QUuid(user_uuid_str);
-        JsonDataAccessor::initManager(user_uuid);
+        DataAccessor::theDataAccessor->initManager(user_uuid);
         HomeWindow* home_window = new HomeWindow(user_uuid);
         home_window->show();
         this->close();
     } else {
-        bool registered = JsonDataAccessor::userRegister(username, password);
+        bool registered = DataAccessor::theDataAccessor->userRegister(username, password);
         if (registered) {
             BetterMessageBox::info(this, tr("注册成功"), tr("用户注册成功！"));
-            user_uuid_str = JsonDataAccessor::userLogin(username, password);
+            user_uuid_str = DataAccessor::theDataAccessor->userLogin(username, password);
             if (!user_uuid_str.isEmpty()) {
                 QUuid user_uuid = QUuid(user_uuid_str);
-                JsonDataAccessor::initManager(user_uuid);
+                DataAccessor::theDataAccessor->initManager(user_uuid);
                 HomeWindow* home_window = new HomeWindow(user_uuid);
                 home_window->show();
                 this->close();
