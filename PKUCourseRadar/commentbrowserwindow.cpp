@@ -25,8 +25,11 @@ void CommentBrowserWindow::sync_list(){
     for(QUuid commentId : CourseManager::theManager.AllCourses[courseId].comments){
         commentIds.push_back(commentId);
     }
-    std::sort(commentIds.begin(), commentIds.end(), [](QUuid a, QUuid b){if(CourseManager::theManager.AllComments[a].likes.size() - CourseManager::theManager.AllComments[a].dislikes.size() != CourseManager::theManager.AllComments[b].likes.size() - CourseManager::theManager.AllComments[b].dislikes.size()) return CourseManager::theManager.AllComments[a].likes.size() - CourseManager::theManager.AllComments[a].dislikes.size() >
-            CourseManager::theManager.AllComments[b].likes.size() - CourseManager::theManager.AllComments[b].dislikes.size(); return CourseManager::theManager.AllComments[a].commentId > CourseManager::theManager.AllComments[b].commentId; });
+    std::sort(commentIds.begin(), commentIds.end(), [](QUuid a, QUuid b){
+        if(CourseManager::theManager.AllComments[a].likes.size() - CourseManager::theManager.AllComments[a].dislikes.size() != CourseManager::theManager.AllComments[b].likes.size() - CourseManager::theManager.AllComments[b].dislikes.size())
+            return CourseManager::theManager.AllComments[a].likes.size() - CourseManager::theManager.AllComments[a].dislikes.size() > CourseManager::theManager.AllComments[b].likes.size() - CourseManager::theManager.AllComments[b].dislikes.size();
+        return CourseManager::theManager.AllComments[a].commentId > CourseManager::theManager.AllComments[b].commentId;
+    });
     for(QUuid commentId : commentIds)
     ui->lw_all_comments->addItem(new QListWidgetItem(CourseManager::theManager.AllComments[commentId].comment.replace("\n", "")));
 }
