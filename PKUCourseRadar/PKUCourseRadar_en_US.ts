@@ -61,7 +61,7 @@
 <context>
     <name>BetterMessageBox</name>
     <message>
-        <location filename="bettermessagebox.cpp" line="40"/>
+        <location filename="bettermessagebox.cpp" line="36"/>
         <source>确定</source>
         <translation>OK</translation>
     </message>
@@ -137,7 +137,7 @@ Notes: %7</translation>
 <context>
     <name>CourseComment</name>
     <message>
-        <location filename="coursemanager.cpp" line="54"/>
+        <location filename="coursemanager.cpp" line="55"/>
         <source>评论者: %1
 时间: %2
 评分: %3
@@ -261,7 +261,6 @@ Rating: %3
     <name>HomeWindow</name>
     <message>
         <location filename="homewindow.ui" line="20"/>
-        <location filename="homewindow.ui" line="168"/>
         <source>开始</source>
         <translation>Start</translation>
     </message>
@@ -271,27 +270,30 @@ Rating: %3
         <translation>Course Auditing Recommendation System for PKUers</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="61"/>
+        <location filename="homewindow.ui" line="134"/>
+        <source>查找课程</source>
+        <translation>Find Courses</translation>
+    </message>
+    <message>
         <source>简体中文</source>
-        <translation>Simplified Chinese</translation>
+        <translation type="vanished">Simplified Chinese</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="71"/>
         <source>English</source>
-        <translation>English</translation>
+        <translation type="vanished">English</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="208"/>
+        <location filename="homewindow.ui" line="174"/>
         <source>我的课程</source>
         <translation>My Courses</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="288"/>
+        <location filename="homewindow.ui" line="254"/>
         <source>退出登录</source>
         <translation>Log Out</translation>
     </message>
     <message>
-        <location filename="homewindow.ui" line="248"/>
+        <location filename="homewindow.ui" line="214"/>
         <source>关于我们</source>
         <translation>About Us</translation>
     </message>
@@ -308,162 +310,167 @@ Rating: %3
         <translation>Welcome</translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="38"/>
+        <location filename="loginwindow.ui" line="40"/>
         <source>PKUers的课程旁听推荐系统</source>
         <translation>Course Auditing Recommendation System for PKUers</translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="77"/>
+        <location filename="loginwindow.ui" line="85"/>
         <source>用户名</source>
         <translation>Username</translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="115"/>
+        <location filename="loginwindow.ui" line="136"/>
         <source>密码</source>
         <translation>Password</translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="169"/>
+        <location filename="loginwindow.ui" line="203"/>
         <source>登录 / 注册</source>
         <translation>Log In / Sign Up</translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="187"/>
+        <location filename="loginwindow.ui" line="253"/>
         <source>导入数据库</source>
         <translation>Import Database</translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="205"/>
+        <location filename="loginwindow.ui" line="284"/>
         <source>导出数据库</source>
         <translation>Export Database</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="30"/>
+        <location filename="loginwindow.ui" line="315"/>
+        <source>🌏简体中文</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="loginwindow.cpp" line="38"/>
         <source>登录/注册</source>
         <translation>Log In / Sign Up</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="30"/>
+        <location filename="loginwindow.cpp" line="38"/>
         <source>用户名或密码不能为空。</source>
         <translation>Username or password cannot be empty.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="35"/>
+        <location filename="loginwindow.cpp" line="43"/>
         <source>登录成功</source>
         <translation>Login Successful</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="35"/>
+        <location filename="loginwindow.cpp" line="43"/>
         <source>登录成功！</source>
         <translation>Login successful!</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="44"/>
+        <location filename="loginwindow.cpp" line="52"/>
         <source>注册成功</source>
         <translation>Registration Successful</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="44"/>
+        <location filename="loginwindow.cpp" line="52"/>
         <source>用户注册成功！</source>
         <translation>User registration successful!</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="53"/>
+        <location filename="loginwindow.cpp" line="61"/>
         <source>错误</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="53"/>
+        <location filename="loginwindow.cpp" line="61"/>
         <source>注册成功但登录失败，请联系管理员。</source>
         <translation>Registration successful but login failed. Please contact the administrator.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="56"/>
+        <location filename="loginwindow.cpp" line="64"/>
         <source>登录失败</source>
         <translation>Login Failed</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="56"/>
+        <location filename="loginwindow.cpp" line="64"/>
         <source>用户名或密码错误。</source>
         <translation>Incorrect username or password.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="63"/>
+        <location filename="loginwindow.cpp" line="71"/>
         <source>选择数据库文件</source>
         <translation>Select Database File</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="63"/>
-        <location filename="loginwindow.cpp" line="105"/>
+        <location filename="loginwindow.cpp" line="71"/>
+        <location filename="loginwindow.cpp" line="113"/>
         <source>JSON Files (*.json)</source>
         <translation>JSON Files (*.json)</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="70"/>
-        <location filename="loginwindow.cpp" line="81"/>
-        <location filename="loginwindow.cpp" line="86"/>
+        <location filename="loginwindow.cpp" line="78"/>
+        <location filename="loginwindow.cpp" line="89"/>
+        <location filename="loginwindow.cpp" line="94"/>
         <source>导入失败</source>
         <translation>Import Failed</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="70"/>
+        <location filename="loginwindow.cpp" line="78"/>
         <source>无法打开源文件进行读取。</source>
         <translation>Unable to open the source file for reading.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="81"/>
+        <location filename="loginwindow.cpp" line="89"/>
         <source>无法打开目标数据库文件进行写入。</source>
         <translation>Unable to open the destination database file for writing.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="86"/>
+        <location filename="loginwindow.cpp" line="94"/>
         <source>写入数据库文件失败。</source>
         <translation>Failed to write to the database file.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="92"/>
+        <location filename="loginwindow.cpp" line="100"/>
         <source>导入成功</source>
         <translation>Import Successful</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="92"/>
+        <location filename="loginwindow.cpp" line="100"/>
         <source>数据库已成功导入并覆盖。</source>
         <translation>Database imported and overwritten successfully.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="101"/>
-        <location filename="loginwindow.cpp" line="116"/>
-        <location filename="loginwindow.cpp" line="121"/>
+        <location filename="loginwindow.cpp" line="109"/>
+        <location filename="loginwindow.cpp" line="124"/>
+        <location filename="loginwindow.cpp" line="129"/>
         <source>导出失败</source>
         <translation>Export Failed</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="101"/>
+        <location filename="loginwindow.cpp" line="109"/>
         <source>无法打开源数据库文件进行读取。</source>
         <translation>Unable to open the source database file for reading.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="105"/>
+        <location filename="loginwindow.cpp" line="113"/>
         <source>保存数据库文件</source>
         <translation>Save Database File</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="116"/>
+        <location filename="loginwindow.cpp" line="124"/>
         <source>无法打开目标文件进行写入。</source>
         <translation>Unable to open the destination file for writing.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="121"/>
+        <location filename="loginwindow.cpp" line="129"/>
         <source>写入文件失败。</source>
         <translation>Failed to write to the file.</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="127"/>
+        <location filename="loginwindow.cpp" line="135"/>
         <source>导出成功</source>
         <translation>Export Successful</translation>
     </message>
     <message>
-        <location filename="loginwindow.cpp" line="127"/>
+        <location filename="loginwindow.cpp" line="135"/>
         <source>数据库已成功导出。</source>
         <translation>Database exported successfully.</translation>
     </message>
@@ -514,9 +521,8 @@ Rating: %3
         <translation>Search Tags</translation>
     </message>
     <message>
-        <location filename="radarwindow.ui" line="143"/>
         <source>-&gt;</source>
-        <translation>-&gt;</translation>
+        <translation type="vanished">-&gt;</translation>
     </message>
 </context>
 </TS>
