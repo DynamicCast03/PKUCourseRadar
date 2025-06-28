@@ -1,0 +1,192 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,amsthm,amssymb,booktabs,geometry,graphicx,caption}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{braket}
+\usepackage{tikz-3dplot}
+\usepackage{comment}
+
+\title{\textbf{《程序设计实习》Qt大作业\\ 作业报告}}
+\author{\kaishu 李明泽\textsuperscript{1}, 王晨旭\textsuperscript{2}, 王度\textsuperscript{3}}
+\date{2024 —\ 2025 学年第二学期}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}  
+\kaishu
+\textsuperscript{1} 信息科学技术学院, 李明泽, 2400013220;\\
+\textsuperscript{2} 信息科学技术学院, 王晨旭, 2400013225;\\
+\textsuperscript{3} 地球与空间科学学院, 王度, 2400012446;\\
+\end{center}
+
+\tableofcontents
+
+\section{程序功能介绍}
+
+\textbf{我们开发的软件名为PKUCourseRadar，是一个帮助用户选择、规划旁听课程的软件。}
+
+我们的软件包含以下核心功能：
+
+\textbf{导入课程信息} \ 本项目支持自定义课程信息的导入。这使得软件可以支持使用不同学期甚至不同学校的动态课表，具有很强的适应性和实用性。
+
+\textbf{多维度课程检索} \ 导入用户课程信息后，可通过搜索特定课程名称、授课教师、教学楼和特定教师查找相应课程，也可根据一个或多个特定标签筛选课程，找到自己心仪的课程。
+
+\textbf{规划旁听课表} \ 点击课表单元格即可看到在当前时间段的所有课程，支持查看详细课程信息、收藏、选中（置顶）等操作。用户可在“我的课程”中集中管理所有已收藏课程，并对同一时间段的课程进行置顶、取消收藏等操作。
+
+\textbf{多用户支持与课程评价系统} \ 内置登录注册与课程评价系统，用户可查看其他用户的课程评论，并支持对评论进行点赞与点踩，从而构建互动的课程评价社区。
+
+\textbf{多语言支持} \ 在登录界面可切换中英文显示，满足不同语言用户的需求。
+
+\section{项目各模块与类设计细节}
+
+\subsection{\texttt{CourseManager}}
+\texttt{CourseManager} 是一个采用单例模式的全局对象 (\texttt{theManager})。这意味着在整个应用的生命周期中，只有一个 \texttt{CourseManager} 实例存在。这种设计是为了提供一个统一的数据访问入口，避免在众多窗口之间层层传递数据对象的复杂性。此外，每个用户的全部信息都可以用一个\texttt{CourseManager}对象表示。因此，实现用户的登录时，只需从文件中把用户信息加载到\texttt{CourseManager::theManager}中，即可直接通过\texttt{CourseManager}进行操作。而用户退出登录时，再把\texttt{CourseManager}的信息写入数据库即可。
+
+下面介绍\texttt{CourseManager}中值得一提的实现细节。
+
+\noindent \textbf{\texttt{QMap<QUuid, Course> AllCourses}}
+
+\texttt{QMap<QUuid, Course> AllCourses}是存储所有课程信息的数据结构。选用这样的结构，可以将所有\texttt{Course}对象存储于这个结构中，而在程序的其它部分均使用\texttt{QUuid}来代表一门课程。这样做的好处是，当程序内部需要传输课程信息时，可以统一使用值传递\texttt{QUuid}，而不会带来过大的复制开销，并且保证了\texttt{AllCourses}中作为值的\texttt{Course}对象是代表这一课程的唯一\texttt{Course}对象；相反，如果使用\texttt{QSet<Course>}或\texttt{QVector<Course>}存储课程，将会导致传递课程信息时，需要考虑选择值传递还是引用传递、指针传递的问题；同时，如果中间有一步不慎使用了值传递，而后续需要对课程信息进行更新，则无法作用到最初的\texttt{Course}对象，造成课程信息的不统一。同时，由于存在多个\texttt{Course}对象，哪个\texttt{Course}是“正统”的也无从得知。使用\texttt{QMap}规避了上述问题。
+
+我们还通过在\texttt{Course}对象中加入课程UUID属性，实现了课程与UUID的一一对应和快速查找。
+
+\texttt{QMap<QUuid, CourseComment> AllComments}也采用了类似的结构，具备以上所述优点。
+
+\subsection{数据实体类 (\texttt{Course}, \texttt{CourseComment}, \texttt{CourseTime})}
+这些类封装了相关对象的属性和一些辅助方法。下面介绍这三个类中值得一提的实现细节。
+
+\noindent \textbf{\texttt{Course::description()}}
+
+这个函数可以返回课程的可读描述，将复杂的字符串格式化部分在\texttt{Course}内部即实现，避免了多行长字符串对需要课程详情的相关代码可读性的干扰。同时也具备了良好的可扩展性。
+
+\texttt{CourseComment::format()}具备类似的功能。
+
+\noindent \textbf{\texttt{CourseComment::likes}}
+
+与其简单粗暴地使用\texttt{int} 类型存储\texttt{likes} ，我们使用了\texttt{QSet<QUuid>}来存储点赞信息。这样的好处是，确保每个用户只能点一次赞，并且用户取消点赞时，也可以以较低的复杂度将用户从点赞列表中删除。
+
+\texttt{CourseComment::dislikes}同理。
+
+\subsection{数据库读取接口\texttt{DataAccessor}}
+\texttt{DataAccessor}是一个抽象类，实现了四个接口：用户登录、用户注册、从文件读取\texttt{CourseManager}、将\texttt{CourseManager}写入文件。
+
+事实上，整个程序中，我们使用的均为\texttt{JsonDataAccessor}。那为什么还要实现\texttt{DataAccessor}这个抽象类呢？这样做的好处是，利用C++的多态，只要一个类继承自\texttt{DataAccessor}，就可以作为这个程序读写数据库的接口。这保证了程序良好的可扩展性：例如，如果未来要把这个项目接入网络，实现真正的多用户交互，实现服务端的相关代码后，我们只需实现一个\texttt{WebDataAccessor}，然后在\texttt{main}中把\texttt{DataAccessor::theDataAccessor}初始化为一个指向\texttt{WebDataAccessor}的指针即可。也可以多种数据库读取方法相结合。
+
+\texttt{DataAccessor}主要在\texttt{LoginWindow}中调用，以处理用户管理与用户登录后对数据库的读取；在\texttt{HomeWindow}关闭后，也会调用\texttt{DataAccessor}，将\texttt{CourseManager}写入数据库。
+
+
+\subsection{UI与交互逻辑}
+
+本项目并不依靠大量窗口的堆叠取胜，而是对每个窗口进行精心设计与布局，展示尽可能详尽的信息，并且充分利用鼠标的单击、双击、右键等事件，尽可能简化交互所需的操作次数，实现更简捷的用户体验。
+
+\subsubsection{\texttt{LoginWindow} - 用户注册与登录}
+
+本窗口为程序入口。输入用户名和密码后，程序将会对密码进行MD5编码并与数据库中的数据进行比对：如果用户名不存在，就直接注册这个账号；否则，如果用户名存在但是密码不对，则弹出提示框，提示密码错误；如果用户名和密码均正确，则正常登录。
+
+本窗口具有导入、导出Json数据库的功能，这保证了程序的适应性，可以支持使用不同学期甚至不同学校的动态课表，也可适用于不同的用户团体或组织。
+
+本窗口还有一个切换显示语言的按钮。具体请参见\ref{i18n}。
+
+\subsubsection{\texttt{HomeWindow} - 导航窗口}
+
+此窗口为程序的导航窗口，通向两个主要功能：“查找课程”和“我的课程”，以及“关于我们”和“退出登录”。窗口左侧为两张北京大学的图片，使用\texttt{.qrc}资源文件嵌入程序，彰显北大特色。
+
+\subsubsection{\texttt{RadarWindow} - 课程发现与筛选}
+
+本窗口是本项目的核心：通过课程的具体信息和标签来筛选课程，帮助用户快速检索到旁听课程。
+
+窗口左侧是筛选条件，右侧是一个单元格组成的可操作课程表，实时显示每个单元格的可用课程数量，点击单元格便可弹出\texttt{CourseInfoWindow}展示这些课程的详细信息，并进行更多操作。只要筛选条件发生任何改变，均会通过信号-槽触发\texttt{reSearchCourses}方法。这个方法会根据新的筛选条件，计算有多少门课程占用了某个单元格，并将这个数量设置为该单元格的显示文本，帮助用户快速查看各时段的课程数量信息。
+
+值得一提的是tag浏览器的一个实现细节：当tag从一个列表移动到另一个列表时，两个列表均会根据两个\texttt{QSet}完全重新加载一次。这样做的目的是，保证一个tag在两次操作，回到原来所属列表时可以回到自己所在位置，而不是插入到列表的结尾。这使得tag的选取和删除没有割裂感，提高了用户体验。
+
+\subsubsection{\texttt{MyCoursesWindow} \& \texttt{CourseInfoWindow} - 课表展示与修改}
+
+\texttt{MyCoursesWindow} 负责展示用户的课表。\texttt{syncCells}方法为其核心，用来把\texttt{CourseManager}中的信息显示在课表上。点击课表的单元格即可对课程进行收藏、取消收藏、选中（置顶）等操作。
+
+\texttt{CourseInfoWindow} 则是一个在程序中多次使用的信息面板，用于展示特定时间段的课程详细信息。得益于上面提到的\texttt{AllCourses}的结构，它在初始化时接收一个课程ID列表和时间信息，而不必复制课程对象。
+
+由于课程的选中（置顶）的必要条件是该课程被收藏，我们实现了如下的逻辑：
+
+当用户右键单击列表中的某个课程项时，会触发 \texttt{onItemRightClicked} 事件，该事件会直接修改 \texttt{CourseManager} 中对应课程的收藏状态 (\texttt{marked} 属性)。如果取消收藏的课程恰好是某个时间段的已选课程，则会将其从 \texttt{selectedCourses} 中移除。随后，\texttt{sync\_list()} 方法会被调用，刷新列表以显示或隐藏收藏标记，并通过 \texttt{emit changed()} 信号通知父窗口数据已更改，需要刷新。
+
+双击课程项则会触发 \texttt{on\_l\_list\_itemDoubleClicked} 事件。该事件首先检查课程是否已收藏，未收藏的课程不能被选择。然后，它会修改 \texttt{CourseManager} 中对应时间段的已选课程，实现选课或取消选课的功能。同样，\texttt{sync\_list()} 方法会被调用以刷新列表（显示或隐藏选课标记），并通过 \texttt{emit changed()} 信号通知父窗口。
+
+\texttt{sync\_list()} 方法还承担着根据课程均分对课程进行排序的工作，将高分课程排在前面。如果课程没有评价，我们将4.2分（百分制下的84分）作为课程的默认评分。
+
+这样，我们便在不添加额外按钮的情况下，简洁地完成了两种操作的实现。同时，课程名称前面会显示一个对应的emoji来代表某门课程的状态（是否收藏、是否选中），提供视觉反馈。另外，本窗口也作为评论浏览器的入口，选中课程点击右上角按钮，即可查看该课程的课程评价。这样的结构，统一了\texttt{RadarWindow}和\texttt{MyCoursesWindow}的课程信息展示窗口，避免了重复实现。
+
+\subsubsection{\texttt{CommentBrowserWindow} \& \texttt{AddCommentWindow} - 课程评论}
+
+评论浏览器(\texttt{CommentBrowserWindow})允许用户查看课程评论并进行互动。这里也使用了类似的使用\texttt{sync\_list()}方法的处理方式。并且此处的\texttt{sync\_list()}也会根据评论的“净推荐值”（点赞数减去点踩数）进行降序排序。
+
+用户可以通过点击 “赞” 和 “踩” 按钮，直接修改 \texttt{CourseManager} 中对应评论的 \texttt{likes} 和 \texttt{dislikes} 集合。数据修改后，\texttt{sync\_list()} 会被立即调用，从而重新获取数据、重新排序、并重新显示列表，为用户提供即时的视觉反馈。
+
+\texttt{AddCommentWindow}是用来撰写课程评价的窗口。窗口上方使用\texttt{QSlider}实现了课程rating的选取。
+
+\subsection{自定义UI组件}
+
+我们的项目使用了一些自定义UI组件，以实现一些更美观、更符合项目需求的控件。
+
+\noindent \textbf{\texttt{CourseTableWidget}}
+
+\texttt{CourseTableWidget} 是一个核心的容器组件，使用 \texttt{QGridLayout} 创建了一个 7x12 的 \texttt{CourseCell} 网格。它的主要职责是创建并布局所有的 \texttt{CourseCell}，并将每个 \texttt{CourseCell} 的 \texttt{clicked} 和 \texttt{rightClicked} 信号连接到自身的 \texttt{handle...} 槽函数。这些槽函数的作用是从 \texttt{sender()} 获取发出信号的 \texttt{CourseCell}，然后将这个信号连同该单元格的坐标 (x, y) 再次 \texttt{emit} 出去，供 \texttt{RadarWindow} 或 \texttt{MyCoursesWindow} 使用。它起到了一个信号中继和坐标附加的作用。
+
+\noindent \textbf{\texttt{CourseCell}}
+
+\texttt{CourseCell} 是一个可用于显示各种信息的课程单元格。它内部维护了 \texttt{disabled}、\texttt{canDisable} 等状态，并使用 \texttt{paintEvent} 负责绘制背景和边框。背景色 \texttt{currentColor} 是一个动态变量，通过动画效果实现平滑的颜色过渡。\texttt{enterEvent}、\texttt{leaveEvent}、\texttt{mousePressEvent} 等事件处理器不直接改变颜色，而是设置并启动一个 \texttt{QVariantAnimation}。这个动画的目标值是 \texttt{hoverColor}、\texttt{pressedColor} 等。动画的 \texttt{valueChanged} 信号连接到 \texttt{onAnimationValueChanged} 槽，该槽负责更新 \texttt{currentColor} 并调用 \texttt{update()} 请求重绘，从而实现了平滑的颜色过渡效果。
+
+\noindent \textbf{\texttt{BetterButton}}
+
+\texttt{BetterButton} 是一个较复杂的自定义绘制的按钮组件。此组件存在多种特殊效果：
+
+\textbf{线性过渡} \  按钮未悬停、未点击时，会显示一个从左上角到右下角的线性过渡效果。
+
+\textbf{径向过渡} \  当鼠标悬停或点击按钮时，会显示一个以鼠标位置为中心的径向渐变效果，创造出光泽跟随鼠标的效果。
+
+\textbf{阴影效果} \  在 \texttt{paintEvent} 中，\texttt{createBlurredShadow} 被调用两次，一次生成浅色阴影（偏移到左上），一次生成深色阴影（偏移到右下）。这两个阴影用于模拟光照效果，增强按钮的立体感。阴影颜色会根据按钮的状态（默认/悬停/点击）进行调整。
+
+\textbf{文本位移} \  按下时，按钮文本会有一个微小的位移，模拟物理按压感。
+
+\textbf{动画效果} \  颜色和阴影的过渡使用动画，使得按钮状态变化更加平滑自然。动画时长可以自定义。
+
+\textbf{可配置性} \  按钮的背景颜色、圆角大小、内容内边距、渐变颜色、阴影颜色、阴影偏移、模糊半径等参数均可配置，以满足不同的界面设计需求。
+
+\noindent \textbf{\texttt{BetterMessageBox}}
+
+设计这个类的目的是用来替代Qt自带的\texttt{QMessageBox}。主要原因是\texttt{QMessageBox}采用的是默认的\texttt{QPushButton}，与其它界面广泛使用的\texttt{BetterButton}风格不符。\texttt{BetterMessageBox}中手动实现了一个采用\texttt{BetterButton}的信息提示框。
+
+\subsection{多语言支持} \label{i18n}
+
+我们利用Qt Linguist提供了程序的中英文切换功能。程序中大多数类都继承自\texttt{QObject}并包含\texttt{Q\_OBJECT}宏，因此可以使用\texttt{tr}函数标记需要翻译的字符串。值得一提的是，我们使用了\texttt{xxd}来将二进制的\texttt{.qm}文件转换为头文件，并在需要切换中英文的部分包含这些头文件。这使得我们的程序在发布、传输时，不需要额外携带翻译文件，并且可以在一定程度上防止翻译文件被恶意篡改。
+
+设计上，我们在LoginWindow中即提供语言切换按钮，并且使用地球图标加以指示，以便非中文母语者在默认中文的情况下确定切换语言按钮的位置。
+
+
+
+\section{小组成员分工情况}
+
+\textbf{\kaishu 王度} \quad 数据库结构的设计；\texttt{DataAccessor}、\texttt{JsonDataAccessor}的实现；\texttt{CourseManager}及其内部结构的设计与实现；\texttt{LoginWindow}的设计与实现；\texttt{HomeWindow}的实现；上述四个自定义控件的设计与实现；\texttt{RadarWindow}的设计与实现；\texttt{CourseInfoWindow}的设计与实现；“我的课程”功能的优化；\texttt{AboutUs}窗口的设计与实现；课程评论、评分功能及两个相关窗口的设计与实现；多语言支持的实现；作业报告第二部分“项目各模块与类设计细节”的撰写。
+
+\textbf{\kaishu 王晨旭} \quad “我的课程”部分的构思与初步实现；“开始”和“我的课程”部分中bug的修复；项目效果及隐含问题检测。
+
+\textbf{\kaishu 李明泽} \quad 项目构型；设计HomeWindow界面；提取、处理北大全校课表信息；对接联络助教；路演参选和最终演示两个视频的录制；作业报告初版的撰写。
+
+\section{项目总结与反思}
+本项目成功构建了一个功能完备的旁听课程选择与规划软件PKUCourseRadar。通过实现课程导入、多维度检索、个性化课表规划、以及用户社交评价等核心功能，我们极大地便利了用户发现、选择和管理旁听课程。
+
+在技术实现上，我们通过精心设计的模块划分、数据结构（如采用\texttt{QMap<QUuid, Course>}管理课程数据，有效避免了数据冗余和一致性问题）和抽象接口（如\texttt{DataAccessor}），使得项目在代码层面具备了良好的可维护性和可扩展性，为未来集成更多数据源或实现网络化服务打下了基础。自定义UI组件（如\texttt{BetterButton}和\texttt{CourseCell}）的应用也提升了用户界面的美观度和交互体验。
+
+在项目开发过程中，我们也积累了宝贵的经验，主要体现在以下几个方面：
+
+\textbf{前期规划的重要性与前瞻性} \ 项目初期，我们没有预见到后期对多用户、评论体系等功能的需求，导致数据库结构设计时未预留相关字段。这直接造成了后期的数据库结构调整、数据迁移以及相关读取模块的重写，耗费了额外的时间和精力。这提醒了我们：在项目启动之初，进行充分详尽的需求分析、功能清单罗列和具备一定前瞻性的架构设计是至关重要的，它能够有效规避后期可能出现的大规模重构风险，提高开发效率。
+
+\textbf{技术选型与权衡} \ 在自定义UI组件的开发上，例如\texttt{BetterButton}的复杂动画和阴影效果实现、\texttt{CourseTableWidget}等，虽然投入了较多时间和精力，但最终增强了项目的视觉吸引力和用户交互感。这启发我们思考软件开发过程中技术实现深度与用户体验提升之间的权衡取舍。有时为了达到更优质的用户体验，投入额外的时间在细节打磨上是值得的。
+
+\textbf{复杂交互逻辑的实现与状态管理} \ \texttt{RadarWindow}和\texttt{MyCoursesWindow}中涉及的课程筛选、课表同步、收藏/选中逻辑以及\texttt{CourseInfoWindow}的数据传递，都要求UI层与数据管理层（\texttt{CourseManager}）之间保持高度同步。实现这些复杂交互时，我们通过信号-槽机制和\texttt{syncCells}/\texttt{sync\_list}等同步方法，维护了数据和UI状态的一致性，但也认识到复杂多窗口程序中，对数据流和UI刷新机制进行精细化管理是一个较大的挑战，需要严谨的逻辑设计，才能保证数据展示的一致性。
+
+展望未来，本项目仍有广阔的开发空间。例如，可以进一步优化课程推荐算法，使其更智能化地为用户匹配感兴趣的课程；可以接入LLM进行自动化的tag生成和课程简介生成；将抽象的\texttt{DataAccessor}实例化为一个新的\texttt{WebDataAccessor}，真正对接至后端服务，实现多用户数据的云端存储和实时同步，从而构建一个真正的多用户社区；利用Qt的跨平台特性，开发移动端版本，以适应更广泛的使用场景。我们相信，通过持续的迭代和优化，PKUCourseRadar将能更好地服务于北大学子乃至全国大学生，成为他们高效规划旁听课程的得力助手。
+
+\end{document}
